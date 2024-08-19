@@ -10,8 +10,9 @@ final class Routing
     $routeComposee = rtrim($routeComposee, '/');
     $routeComposee = explode('/', $routeComposee);
 
-    for ($i=sizeof($routeComposee); $i < 4; $i++) { 
-        $routeComposee[$i] = null;
+    for ($i = sizeof($routeComposee); $i < 4; $i++)
+    {
+      $routeComposee[$i] = null;
     }
     return $routeComposee;
   }

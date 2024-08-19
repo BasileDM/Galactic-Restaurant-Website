@@ -25,7 +25,6 @@ class Dish
         $this->idAdmin = $idAdmin;
     }
 
-
     /**
      * Get the value of id
      */

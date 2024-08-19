@@ -8,5 +8,4 @@ define('DB_PWD', '');
 define('HOME_URL', '/');
 
 // Ne pas toucher :
-
 define('DB_INITIALIZED', TRUE);

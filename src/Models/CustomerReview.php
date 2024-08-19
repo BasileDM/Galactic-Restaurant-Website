@@ -11,7 +11,6 @@ class CustomerReview
     private $role;
     private $comments;
 
-
     function __construct($id, $pictureUrl, $firstName, $lastName, $role, $comments)
     {
         $this->id = $id;
@@ -21,7 +20,6 @@ class CustomerReview
         $this->role = $role;
         $this->comments = $comments;
     }
-
 
     /**
      * Get the value of id
