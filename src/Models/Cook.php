@@ -12,7 +12,6 @@ class Cook
     private $twitter;
     private $insta;
 
-
     function __construct($id, $firstName, $lastName, $role, $facebook, $twitter, $insta)
     {
         $this->id = $id;
@@ -23,8 +22,6 @@ class Cook
         $this->twitter = $twitter;
         $this->insta = $insta;
     }
-
-
 
     /**
      * Get the value of id
