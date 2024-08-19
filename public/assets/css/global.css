@@ -1,0 +1,29 @@
+:root {
+  --color-primary: #E1E138;
+  --color-secondary: #080E0F;
+}
+
+@font-face {
+  font-family: 'Electrolize';
+  src: url(../fonts/Electrolize-Regular.woff2) format('woff2'),
+       url(../fonts/Electrolize-Regular.woff) format('woff'),
+       url(../fonts/Electrolize-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Glipervelz';
+  src: url(../fonts/glipervelz-origy_full-webfont.woff2) format('woff2'),
+       url(../fonts/glipervelz-origy_full-webfont.woff) format('woff'),
+       url(../fonts/glipervelz-origy_full-webfont.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Hackernoon';
+  src: url(../fonts/hackernoon-regular-webfont.woff2) format('woff2'),
+       url(../fonts/hackernoon-regular-webfont.woff) format('woff'),
+       url(../fonts/hackernoon-regular-webfont.ttf) format('truetype');
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    color: lightblue;
+  }
+}
