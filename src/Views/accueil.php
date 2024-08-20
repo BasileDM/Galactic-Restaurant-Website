@@ -3,8 +3,8 @@ include_once __DIR__ . '/Includes/header.php';
 ?>
 <main>
     <section>
-        <h2 class="hero-flavor-text" style="text-align: center;"> À L'Étoile Dorée, faites une pause interstellaire et dégustez une cuisine qui transcende les galaxies. </h2>
-        <hr>
+        <h2 class="hero-flavor-text"> À L'Étoile Dorée, faites une pause interstellaire et dégustez une cuisine qui transcende les galaxies. </h2>
+        <div class="home-separator">
     </section>
     <section class="illustration-section">
         <img class="illustration" src="assets/imgs/Plats/Entrees/TartaredeSphèresdeNeptune.png" alt="spheres-dish-illustration">
@@ -47,23 +47,23 @@ include_once __DIR__ . '/Includes/header.php';
             </div>
             <div class="carousel-review">
                 <p class="carousel-review-text" data-index="0">"Excellent service, highly recommended!"</p>
-                <p class="carousel-review-author" data-index="0">John Doe</p>
+                <p class="carousel-review-author" data-index="0">Predator</p>
                 <p class="carousel-review-subtitle" data-index="0">Guest</p>
 
                 <p class="carousel-review-text" data-index="1" style="display: none;">"Very satisfied with the quality!"</p>
-                <p class="carousel-review-author" data-index="1" style="display: none;">Jane Smith</p>
+                <p class="carousel-review-author" data-index="1" style="display: none;">Stellar Dogg</p>
                 <p class="carousel-review-subtitle" data-index="1" style="display: none;">Guest</p>
 
                 <p class="carousel-review-text" data-index="2" style="display: none;">"An amazing experience from start to finish."</p>
-                <p class="carousel-review-author" data-index="2" style="display: none;">Alex Johnson</p>
+                <p class="carousel-review-author" data-index="2" style="display: none;">Alexa Johnson</p>
                 <p class="carousel-review-subtitle" data-index="2" style="display: none;">Guest</p>
 
                 <p class="carousel-review-text" data-index="3" style="display: none;">"Would definitely use this service again."</p>
-                <p class="carousel-review-author" data-index="3" style="display: none;">Emily Davis</p>
+                <p class="carousel-review-author" data-index="3" style="display: none;">Michael Brown</p>
                 <p class="carousel-review-subtitle" data-index="3" style="display: none;">Guest</p>
 
                 <p class="carousel-review-text" data-index="4" style="display: none;">"Professional and reliable service."</p>
-                <p class="carousel-review-author" data-index="4" style="display: none;">Michael Brown</p>
+                <p class="carousel-review-author" data-index="4" style="display: none;">X-22-7Z20</p>
                 <p class="carousel-review-subtitle" data-index="4" style="display: none;">Guest</p>
             </div>
             <div class="carousel-dots">
