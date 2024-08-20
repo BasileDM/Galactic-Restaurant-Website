@@ -1,19 +1,19 @@
 :root {
-  --color-primary: #E1E138;
-  --color-secondary: #080E0F;
+  --color-primary: #e1e138;
+  --color-secondary: #080e0f;
 }
 
 @font-face {
-  font-family: 'Electrolize';
-  src: url(../fonts/Electrolize-Regular.woff2) format('woff2'),
-       url(../fonts/Electrolize-Regular.woff) format('woff'),
-       url(../fonts/Electrolize-Regular.ttf) format('truetype');
+  font-family: "Electrolize";
+  src: url(../fonts/Electrolize-Regular.woff2) format("woff2"),
+    url(../fonts/Electrolize-Regular.woff) format("woff"),
+    url(../fonts/Electrolize-Regular.ttf) format("truetype");
 }
 @font-face {
-  font-family: 'Glipervelz';
-  src: url(../fonts/glipervelz-origy_full-webfont.woff2) format('woff2'),
-       url(../fonts/glipervelz-origy_full-webfont.woff) format('woff'),
-       url(../fonts/glipervelz-origy_full-webfont.ttf) format('truetype');
+  font-family: "Glipervelz";
+  src: url(../fonts/glipervelz-origy_full-webfont.woff2) format("woff2"),
+    url(../fonts/glipervelz-origy_full-webfont.woff) format("woff"),
+    url(../fonts/glipervelz-origy_full-webfont.ttf) format("truetype");
 }
 @font-face {
   font-family: 'Hackernoon';
@@ -23,7 +23,7 @@
 }
 
 * {
-  font-family: 'Electrolize';
+  font-family: "Electrolize";
 }
 
 body {
@@ -31,6 +31,90 @@ body {
   padding: 0;
 }
 
+/* Header */
+.backgroundHeader {
+  background-image: url("../imgs/Backgrounds/backgroundHeader.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 12px;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Hackernoon";
+  color: white;
+  font-size: 30px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.LogoHeader {
+  width: 20%;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 12px;
+  padding: 0px;
+  color: white;
+}
+
+.backgroundNav {
+  background-image: url("../imgs/Backgrounds/backgroundHeader.png");
+  border-radius: 30px;
+  margin: 1px;
+}
+
+nav ul li {
+  list-style: none;
+  text-decoration: underline;
+}
+
+nav ul li:hover {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 375px) {
+  .backgroundHeader {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .containerImage {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .backgroundNav {
+    background-image: none;
+    font-size: 24px;
+  }
+}
+
+/* Homepage */
 p {
   margin: 0;
   padding: 0;
@@ -67,8 +151,4 @@ hr {
   padding: 68px 18px;
   line-height: 32px;
   letter-spacing: 4px;
-}
-
-@media only screen and (min-width: 375px) {
-  
 }
