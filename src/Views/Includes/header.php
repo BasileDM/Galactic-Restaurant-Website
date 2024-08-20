@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div class="header backgroundHeader center">
             <img class="logoHeader" src="assets/imgs/Logo.png" alt="logo du restaurant galactic">
             <h1> L'étoile dorée </h1>
         </div>
-    </header>
+    </header> -->
