@@ -164,7 +164,7 @@ nav {
   height: 200px; 
   object-fit: cover; 
   border-radius: 50%;
- margin: 24px;
+  margin: 24px;
 }
 
 .centerFlex{
@@ -208,9 +208,14 @@ h2 {
   color: var(--color-secondary);
 }
 
-hr {
+.home-separator {
   width: 50%;
   border : 1px solid var(--color-secondary);
+  margin: 20px auto;
+}
+.hero-flavor-text {
+  text-align: center;
+  margin-top: 20px;
 }
 
 /*Main illustrated section*/
@@ -253,10 +258,10 @@ hr {
   font-style: normal;
 }
 #reservation-button {
-  width: 50px;
+  width: 100px;
   border: 3px solid var(--color-primary);
-  margin: 25px auto;
-  padding: 12px 24px;
+  margin: 12px auto;
+  padding: 4px;
   color: var(--color-primary);
   font-size: 16px;
   cursor: pointer;
@@ -268,10 +273,10 @@ hr {
   transition: 0.5s;
 }
 
-/*reviews section*/
+/* Reviews section */
 #reviews-title {
   position: relative;
-  top: 24px;
+  top: 54px;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
   font-size: 2em;
@@ -281,7 +286,8 @@ hr {
 #reviews-title::before {
   content: "“";
   position: absolute;
-  top: -20px;
+  transform: translate(-50%, -50%);
+  top: -8px;
   left: 50%;
   font-size: 58px;
   font-weight: bold;
@@ -292,6 +298,7 @@ hr {
 .carousel {
   position: relative;
   text-align: center;
+  margin-top: 54px;
   margin-bottom: 20px;
 }
 .carousel-pictures {
@@ -312,5 +319,6 @@ hr {
   cursor: pointer;
 }
 .carousel-dot.active {
-  background: black;
+  background: var(--color-primary);
+  transform: scale(1.5);
 }
