@@ -64,7 +64,7 @@ nav {
   bottom: 0;
 }
 
-nav ul {
+nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -77,17 +77,18 @@ nav ul {
   background-image: url("../imgs/Backgrounds/backgroundHeader.png");
   border-radius: 30px;
   margin: 1px;
+  padding: 1px;
 }
 
-nav ul li {
-  list-style: none;
-  text-decoration: underline;
+a{
+  color: white;
 }
 
-nav ul li:hover {
-  color: var(--color-primary);
+a:hover{
   cursor: pointer;
+  color: var(--color-primary);
 }
+
 
 @media only screen and (min-width: 375px) {
   .backgroundHeader {
