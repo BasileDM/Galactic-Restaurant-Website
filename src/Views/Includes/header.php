@@ -18,13 +18,11 @@
         <div>
             <h1> L'etoile Doree </h1>
             <nav class="backgroundNav">
-                <ul>
-                    <li>Accueil</li>
-                    <li>Menu</li>
-                    <li>Réserver</li>
-                    <li>A propos</li>
-                    <li>Contact</li>
-                </ul>
+                <a href=<?php echo HOME_URL; ?>>Accueil</a>
+                <a href=<?php echo HOME_URL . 'menu'; ?>> Menu</a>
+                <a href=<?php echo HOME_URL . 'reserver'; ?>> Réserver</a>
+                <a href=<?php echo HOME_URL . 'aPropos'; ?>> A propos</a>
+                <a href=<?php echo HOME_URL . 'contact'; ?>> Contact</a>
             </nav>
         </div>
     </div>
