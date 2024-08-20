@@ -111,7 +111,6 @@ nav {
   color: var(--color-primary);
 }
 
-
 /* MENU */
 .containerMenu{
   background-image: url("../imgs/Backgrounds/backgroundMain.png") ;
@@ -173,7 +172,7 @@ nav {
   justify-content: center;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
   .backgroundHeader {
     display: flex;
     flex-direction: row;
@@ -214,17 +213,15 @@ hr {
   border : 1px solid var(--color-secondary);
 }
 
-.generic-wrapper {
-  margin: 12px;
+/*Main illustrated section*/
+.illustration-section {
+  background-image: url('../imgs/Backgrounds/backgroundMain.png');
+  padding-bottom: 20px;
 }
-
 .illustration {
   width: 100%;
   height: 500px;
   object-fit: cover;
-}
-.illustration-section {
-  background-image: url('../imgs/Backgrounds/backgroundMain.png');
 }
 .illustration-section p {
   font-size: 22px;
@@ -234,4 +231,86 @@ hr {
   padding: 68px 18px;
   line-height: 32px;
   letter-spacing: 4px;
+}
+
+/* booking section*/
+.primary-title-back-stroke {
+  color: var(--color-primary);
+  text-align: center;
+}
+.big-reservation-title {
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+#bottom-illustration-text {
+  text-align: center;
+  color: grey;
+  padding: 12px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  font-style: normal;
+}
+#reservation-button {
+  width: 50px;
+  border: 3px solid var(--color-primary);
+  margin: 25px auto;
+  padding: 12px 24px;
+  color: var(--color-primary);
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+#reservation-button:hover {
+  background-color: var(--color-primary);
+  color: black;
+  transition: 0.5s;
+}
+
+/*reviews section*/
+#reviews-title {
+  position: relative;
+  top: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 2em;
+  padding: 12px;
+  line-height: 22px;
+}
+#reviews-title::before {
+  content: "“";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  font-size: 58px;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/*Carousel*/
+.carousel {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.carousel-pictures {
+  display: flex;
+  overflow: hidden;
+}
+.carousel-picture, .carousel-main-picture {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+.carousel-dot.active {
+  background: black;
 }
