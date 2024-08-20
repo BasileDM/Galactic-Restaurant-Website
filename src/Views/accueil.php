@@ -1,6 +1,4 @@
-<?php
-include_once __DIR__ . '/Includes/header.php';
-?>
+<?php include_once __DIR__ . '/Includes/header.php';?>
 <main>
     <section>
         <h2 class="hero-flavor-text"> À L'Étoile Dorée, faites une pause interstellaire et dégustez une cuisine qui transcende les galaxies. </h2>
@@ -17,15 +15,15 @@ include_once __DIR__ . '/Includes/header.php';
             À L'Étoile Dorée, il prépare des plats qui font voyager vos papilles tout en restant gravitationnellement délicieux !"
         </p>
         <div class="primary-title-back-stroke">- L'ETOILE DOREE -</div>
-        <div class="big-reservation-title">Book a Table</div>
+        <div class="big-reservation-title">Réserver une table</div>
         <p id="bottom-illustration-text">
             Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor enim dui lectus id.
             Tristique dignissim pharetra feugiat mattis non. Vivamus libero feugiat odio eget potenti.
         </p>
-        <div id="reservation-button">Book</div>
+        <div id="reservation-button">Réserver</div>
     </section>
     <section>
-        <h2 id="reviews-title">What our clients say about us</h2>
+        <h2 id="reviews-title">Ce que nos clients disent</h2>
         <div class="carousel">
             <script src="assets/js/carousel.js"></script>
             <div class="carousel-pictures">
@@ -46,11 +44,11 @@ include_once __DIR__ . '/Includes/header.php';
                 </div>
             </div>
             <div class="carousel-review">
-                <p class="carousel-review-text" data-index="0">"Excellent service, highly recommended!"</p>
+                <p class="carousel-review-text" data-index="0">"Excellent service, recommande fortement!"</p>
                 <p class="carousel-review-author" data-index="0">Predator</p>
                 <p class="carousel-review-subtitle" data-index="0">Guest</p>
 
-                <p class="carousel-review-text" data-index="1" style="display: none;">"Very satisfied with the quality!"</p>
+                <p class="carousel-review-text" data-index="1" style="display: none;">"Très satisfait de la qualité!"</p>
                 <p class="carousel-review-author" data-index="1" style="display: none;">Stellar Dogg</p>
                 <p class="carousel-review-subtitle" data-index="1" style="display: none;">Guest</p>
 
@@ -62,7 +60,7 @@ include_once __DIR__ . '/Includes/header.php';
                 <p class="carousel-review-author" data-index="3" style="display: none;">Michael Brown</p>
                 <p class="carousel-review-subtitle" data-index="3" style="display: none;">Guest</p>
 
-                <p class="carousel-review-text" data-index="4" style="display: none;">"Professional and reliable service."</p>
+                <p class="carousel-review-text" data-index="4" style="display: none; font-family: 'Glipervelz'">"Professional and reliable service."</p>
                 <p class="carousel-review-author" data-index="4" style="display: none;">X-22-7Z20</p>
                 <p class="carousel-review-subtitle" data-index="4" style="display: none;">Guest</p>
             </div>
@@ -76,3 +74,5 @@ include_once __DIR__ . '/Includes/header.php';
         </div>
     </section>
 </main>
+
+<?php include_once __DIR__ . '/Includes/footer.php'; ?>

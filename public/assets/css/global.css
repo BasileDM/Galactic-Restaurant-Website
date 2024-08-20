@@ -322,3 +322,52 @@ h2 {
   background: var(--color-primary);
   transform: scale(1.5);
 }
+
+/* Footer */
+footer {
+  background-image: url('../imgs/Backgrounds/backgroundHeader.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  font-family: 'Calibri', sans-serif;
+  font-size: 1.3em;
+}
+.footer-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-box {
+  margin: 10px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgba(8, 14, 15, 0.7);
+  padding: 30px;
+}
+.footer-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+.footer-phone-number {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--color-primary);
+}
+.footer-logo {
+  width: 150px;
+  height: 150px;
+}
+.footer-copyright {
+  font-size: 0.8em;
+  opacity: 0.5;
+
+  p {
+    margin: 0;
+  }
+}
