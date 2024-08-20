@@ -22,6 +22,27 @@
        url(../fonts/hackernoonv2-regular-webfont.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: "Josefinsans";
+  src: url(../fonts/josefinsans-variablefont-wght-webfont.woff2) format("woff2"),
+    url(../fonts/josefinsans-variablefont_wght-webfont.woff) format("woff"),
+    url(../fonts/JosefinSans-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Signika";
+  src: url(../fonts/signika-regular-webfont.woff2) format("woff2"),
+    url(../fonts/signika-regular-webfont.woff) format("woff"),
+    url(../fonts/Signika-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bevietnam";
+  src: url(../fonts/bevietnam-lightitalic-webfont.woff2) format("woff2"),
+    url(../fonts/bevietnam-lightitalic-webfont.woff) format("woff"),
+    url(../fonts/BeVietnam-LightItalic.ttf) format("truetype");
+}
+
 * {
   font-family: "Electrolize";
 }
@@ -38,12 +59,6 @@ body {
   background-size: cover;
   padding-top: 12px;
   width: 100%;
-}
-
-h1 {
-  font-family: "Hackernoon";
-  color: white;
-  font-size: 30px;
 }
 
 header {
@@ -81,15 +96,82 @@ nav {
   padding: 1px;
 }
 
-a{
+.titrePrincipal{
+  font-family: "Hackernoon";
+  color: white;
+  font-size: 30px;
+}
+
+.navLink{
   color: white;
 }
 
-a:hover{
+.navLink:hover{
   cursor: pointer;
   color: var(--color-primary);
 }
 
+
+/* MENU */
+.containerMenu{
+  background-image: url("../imgs/Backgrounds/backgroundMain.png") ;
+  color: white;
+  padding: 3%;
+  margin: 1%;
+  border-radius: 20px;
+}
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signika{
+  font-family: 'Signika';
+}
+
+.josefin{
+  font-family: 'Josefin';
+}
+
+.priceMenu{
+  color: var(--color-primary);
+  font-size: 20px;
+  width: 50%;
+}
+
+.ligneJaune{
+  background-color: var(--color-primary);
+  width: 100%;
+  height: 2px;
+}
+
+.ligneBlanche{
+  background-color: white;
+  width: 100%;
+  height: 1px;
+  margin-top: 4px;
+}
+
+.letterSpace{
+  letter-spacing: 2px;
+}
+
+.imagePlatBulle{
+  display: block; 
+  margin: 0 auto; 
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 50%;
+ margin: 24px;
+}
+
+.centerFlex{
+  display: flex;
+  justify-content: center;
+}
 
 @media only screen and (min-width: 375px) {
   .backgroundHeader {
