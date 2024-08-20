@@ -127,13 +127,17 @@ h2 {
   color: var(--color-secondary);
 }
 
+.big-reservation-title {
+  font-family: 'Electrolize';
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 hr {
   width: 50%;
   border : 1px solid var(--color-secondary);
-}
-
-.generic-wrapper {
-  margin: 12px;
 }
 
 .illustration {
@@ -152,4 +156,29 @@ hr {
   padding: 68px 18px;
   line-height: 32px;
   letter-spacing: 4px;
+}
+
+.primary-title-back-stroke {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+#bottom-illustration-text {
+  text-align: center;
+  color: grey;
+  padding: 12px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  font-style: normal;
+}
+
+#reservation-button {
+  width: 50px;
+  border: 3px solid var(--color-primary);
+  margin: auto;
+  padding: 12px 24px;
+  color: var(--color-primary);
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
