@@ -9,10 +9,23 @@
     <link rel="stylesheet" href="assets/css/header.css">
 </head>
 
-<body>
-    <header>
-        <div class="header backgroundHeader center">
-            <img class="logoHeader" src="assets/imgs/Logo.png" alt="logo du restaurant galactic">
-            <h1> L'étoile dorée </h1>
+
+<header>
+    <div class="backgroundHeader">
+        <div class="containerImage">
+            <img class="LogoHeader" src="assets/imgs/Logo.png" alt="logo du restaurant galactic">
         </div>
-    </header>
+        <div>
+            <h1> L'etoile Doree </h1>
+            <nav class="backgroundNav">
+                <ul>
+                    <li>Accueil</li>
+                    <li>Menu</li>
+                    <li>Réserver</li>
+                    <li>A propos</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
