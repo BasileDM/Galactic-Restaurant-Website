@@ -21,6 +21,11 @@ class HomeController
       exit;
     }
   
+    public function affichePagePropos()
+    {
+        $this->render("propos");
+        exit;
+    }
 
     public function affichePageMenu()
     {
