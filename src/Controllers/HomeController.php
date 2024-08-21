@@ -25,5 +25,8 @@ class HomeController
         exit;
     }
 
-
+    public function displayReservationPage() {
+        $this->render("reservation");
+        exit;
+    }
 }

@@ -17,24 +17,29 @@ switch ($route)
     $homeController->affichePageAccueil();
     break;
 
-    case HOME_URL . 'menu':
-      $homeController->affichePageMenu();
-      break;
+  case HOME_URL . 'menu':
+    $homeController->affichePageMenu();
+    break;
 
-      // APRES AUTHENTIFICATION 
-      case HOME_URL . 'pageAccueilAdmin':
-        $adminController->affichePageAdmin();
-        break;
+  // APRES AUTHENTIFICATION 
+  case HOME_URL . 'pageAccueilAdmin':
+    $adminController->affichePageAdmin();
+    break;
 
-    case HOME_URL . 'ajoutPlat':
-      $adminController->affichePageCreationPlats();
-      break;
+  case HOME_URL . 'ajoutPlat':
+    $adminController->affichePageCreationPlats();
+    break;
 
-      case HOME_URL . 'traiterFormulaireDish':
-        $dishController->traiterFormulaireDish();
-        exit;
+  case HOME_URL . 'traiterFormulaireDish':
+    $dishController->traiterFormulaireDish();
+    break;
+  
+  case HOME_URL . 'reservation':
+    $homeController->displayReservationPage();
+    break;
 
-    //FIN 
-    // METTRE DEFAULT 
+  default:
+    $homeController->affichePageAccueil();
+    break;
   
 }
