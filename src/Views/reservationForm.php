@@ -1,7 +1,7 @@
 <?php include_once __DIR__ . '/Includes/header.php'; ?>
 
 <div class="reservation-form-contact-container">
-  <form action="#" method="post">
+  <form action="processReservation" method="post">
     <span class="yellow-text ntr-title">Réservation</span>
     <h2 class="ntr-title">Réserver une table</h2>
     <div class="form-group">
@@ -16,7 +16,7 @@
       <label for="number">Nombre de convives</label>
       <input type="number" class="form-control" id="number" name="number">
     </div>
-    <div id="form-reservation-button-final" onclick="location.href='ProcessReservation'">Réserver</div>
+    <button type="submit" id="form-reservation-button-final">Réserver</button>
   </form>
   <section>
     <span class="yellow-text ntr-title">L'Étoile dorée</span>

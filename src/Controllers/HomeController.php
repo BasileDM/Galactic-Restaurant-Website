@@ -26,7 +26,7 @@ class HomeController
     }
 
     public function displayReservationPage() {
-        $this->render("reservation");
+        $this->render("reservationForm");
         exit;
     }
 }
