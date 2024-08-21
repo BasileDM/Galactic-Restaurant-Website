@@ -18,11 +18,17 @@ class DishRepository{
     }
 
 
-    // ATTENTION POUR LES RECUPERATIONS : 
-    // LIMITER A 3 ET CHOISIR QUE LES ISAVAILABLE
     public function recupererEntrees()
     {
-      $sql = "SELECT * FROM rest_dish WHERE id_types=1";
+      $sql = "SELECT * FROM rest_dish WHERE id_types=1 AND `isAvailable`=1 AND `isRobot`=0 LIMIT 3;";
+      $query = $this->DB->query($sql);
+      $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+      return $demandes;
+    }
+
+    public function recupererEntreesRobot()
+    {
+      $sql = "SELECT * FROM rest_dish WHERE id_types=1 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 3;";
       $query = $this->DB->query($sql);
       $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
       return $demandes;
@@ -30,7 +36,15 @@ class DishRepository{
 
     public function recupererPlats()
     {
-      $sql = "SELECT * FROM rest_dish WHERE id_types=2";
+      $sql = "SELECT * FROM rest_dish WHERE id_types=2 AND `isAvailable`=1 AND `isRobot`=0 LIMIT 3;";
+      $query = $this->DB->query($sql);
+      $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+      return $demandes;
+    }
+
+    public function recupererPlatsRobot()
+    {
+      $sql = "SELECT * FROM rest_dish WHERE id_types=2 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 3;";
       $query = $this->DB->query($sql);
       $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
       return $demandes;
@@ -38,29 +52,48 @@ class DishRepository{
 
     public function recupererDesserts()
     {
-      $sql = "SELECT * FROM rest_dish WHERE id_types=3";
+      $sql = "SELECT * FROM rest_dish WHERE id_types=3 AND `isAvailable`=1 AND `isRobot`=0 LIMIT 3;";
+      $query = $this->DB->query($sql);
+      $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+      return $demandes;
+    }
+
+    public function recupererDessertsRobot()
+    {
+      $sql = "SELECT * FROM rest_dish WHERE id_types=3 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 3;";
       $query = $this->DB->query($sql);
       $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
       return $demandes;
     }
 
     public function ajouterPlats(Dish $dish) {
-      // Assurez-vous que les noms des paramètres dans la requête SQL correspondent exactement à ceux passés à execute()
       $sql = "INSERT INTO rest_dish (TITLE, DESCRIPTION, ISROBOT, ISAVAILABLE, PRICE, ID_TYPES) VALUES (:title, :description, :isRobot, :isAvailable, :price, :idTypes)";
   
       $statement = $this->DB->prepare($sql);
   
       $statement->execute([
-          ':title'       => $dish->getTitle(),      // Utiliser le nom du paramètre :title
-          ':description' => $dish->getDescription(), // Utiliser le nom du paramètre :description
-          ':isRobot'     => $dish->getIsRobot(),    // Utiliser le nom du paramètre :isRobot
-          ':isAvailable' => $dish->getIsAvailable(), // Utiliser le nom du paramètre :isAvailable
-          ':price'       => $dish->getPrice(),       // Utiliser le nom du paramètre :price
-          ':idTypes'     => $dish->getTypeOfDish()   // Utiliser le nom du paramètre :idTypes
+          ':title'       => $dish->getTitle(),    
+          ':description' => $dish->getDescription(), 
+          ':isRobot'     => $dish->getIsRobot(),    
+          ':isAvailable' => $dish->getIsAvailable(), 
+          ':price'       => $dish->getPrice(),       
+          ':idTypes'     => $dish->getTypeOfDish() 
       ]);
   
       $id = $this->DB->lastInsertId();
       $dish->setId($id);
       return $dish;
-  }}
+  }
+
+public function supprimerDish($idDishASup)
+{
+  $sql = "DELETE FROM rest_dish WHERE id_dish = :id";
+  $query = $this->DB->prepare($sql);
+  return $query->execute(['id' => $idDishASup]);
+}
+
+
+}
+
+
   

@@ -22,7 +22,7 @@ switch ($route)
       break;
 
       // APRES AUTHENTIFICATION 
-      case HOME_URL . 'pageAccueilAdmin':
+      case HOME_URL . 'admin':
         $adminController->affichePageAdmin();
         break;
 
@@ -34,7 +34,13 @@ switch ($route)
         $dishController->traiterFormulaireDish();
         exit;
 
-    //FIN 
-    // METTRE DEFAULT 
+        case HOME_URL . 'supprimerDish':
+          $dishController->supprimerDish();
+          exit;
+
+          default:
+          $homeController->affichePage404();
+          break;
+  
   
 }

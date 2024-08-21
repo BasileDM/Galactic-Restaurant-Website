@@ -39,8 +39,36 @@ class DishController
                 $dishRepo = new DishRepository();
                 $dishRepo->ajouterPlats($dish);
 
-                // REDIRIGER
+                header('Location: ' . HOME_URL . 'admin');
+
+
             }
         }
-    }}
+    }
+
+
+   public function supprimerDish()
+   {
+    $json_data = file_get_contents('php://input');
+
+    if (!empty($json_data)) {
+        $data = json_decode($json_data, true);
+        if ($data !== null) {
+            $idDishASup = $data['idDishASup'];
+            $dishRepo = new DishRepository();
+            $success = $dishRepo->supprimerDish($idDishASup);
+
+            if ($success) {
+                echo json_encode(['success' => true]);
+            } else {
+                echo json_encode(['success' => false, 'message' => 'Erreur lors de la suppression du plat']);
+            }
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Données JSON invalides.']);
+        }
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Aucune donnée reçue.']);
+    }
+   }
+}
     
