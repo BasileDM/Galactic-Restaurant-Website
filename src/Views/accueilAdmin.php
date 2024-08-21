@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '/Includes/header.php';
 ?>
+<script defer src="assets/js/scriptAdmin.js"></script>
 
 <div>
     <div class="container mt-5">
@@ -71,7 +72,7 @@ include_once __DIR__ . '/Includes/header.php';
                                                             </label>
                                                             <a href="">
                                                         <img src="assets/imgs/iconCrayon.png" alt="icone pen"></a>
-                                                        <a href=""><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
+                                                        <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
 
                                                         </td>
                                                 </tr>
@@ -84,11 +85,89 @@ include_once __DIR__ . '/Includes/header.php';
                                 </div>
                                 <div class="tab-pane fade" id="plats" role="tabpanel" aria-labelledby="plats-tab">
                                     <h3>Plats</h3>
-                                    <p>Contenu des plats.</p>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">isRobot</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Disponible</th>
+                                            </tr>
+                                        </thead>
+                                        <?php foreach ($plats as $plat)
+                                        { ?>
+                                            <tbody>
+                                                <tr>
+                                                    <td><?= $plat['title'] ?></td>
+                                                    <td><?= $plat['description'] ?></td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td><?= $plat['price'] ?></td>
+                                                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                            </label>
+                                                            <a href="">
+                                                        <img src="assets/imgs/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
+
+                                                        </td>
+                                                </tr>
+
+
+                                            <?php
+                                        } ?>
+                                            </tbody>
+                                    </table>
+                                </div>
                                 </div>
                                 <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
                                     <h3>Desserts</h3>
-                                    <p>Contenu des desserts.</p>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">isRobot</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Disponible</th>
+                                            </tr>
+                                        </thead>
+                                        <?php foreach ($desserts as $dessert)
+                                        { ?>
+                                            <tbody>
+                                                <tr>
+                                                    <td><?= $dessert['title'] ?></td>
+                                                    <td><?= $dessert['description'] ?></td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td><?= $dessert['price'] ?></td>
+                                                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                            </label>
+                                                            <a href="">
+                                                        <img src="assets/imgs/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
+
+                                                        </td>
+                                                </tr>
+
+
+                                            <?php
+                                        } ?>
+                                            </tbody>
+                                    </table>
+                                </div>
                                 </div>
                             </div>
                         </div>

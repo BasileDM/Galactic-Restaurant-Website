@@ -16,10 +16,10 @@
     url(../fonts/glipervelz-origy_full-webfont.ttf) format("truetype");
 }
 @font-face {
-  font-family: 'Hackernoon';
-  src: url(../fonts/hackernoonv2-regular-webfont.woff2) format('woff2'),
-       url(../fonts/hackernoonv2-regular-webfont.woff) format('woff'),
-       url(../fonts/hackernoonv2-regular-webfont.ttf) format('truetype');
+  font-family: "Hackernoon";
+  src: url(../fonts/hackernoonv2-regular-webfont.woff2) format("woff2"),
+    url(../fonts/hackernoonv2-regular-webfont.woff) format("woff"),
+    url(../fonts/hackernoonv2-regular-webfont.ttf) format("truetype");
 }
 
 @font-face {
@@ -52,6 +52,10 @@ body {
   padding: 0;
 }
 
+.vietnam {
+  font-family: "Bevietnam";
+}
+
 /* Header */
 .backgroundHeader {
   background-image: url("../imgs/Backgrounds/backgroundHeader.png");
@@ -72,15 +76,9 @@ header {
 }
 
 nav {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 12px;
   position: fixed;
   bottom: 0;
-}
-
-nav {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -93,91 +91,95 @@ nav {
   background-image: url("../imgs/Backgrounds/backgroundHeader.png");
   border-radius: 30px;
   margin: 1px;
-  padding: 1px;
+  font-size: 12px;
 }
 
-.titrePrincipal{
+.titrePrincipal {
   font-family: "Hackernoon";
   color: white;
   font-size: 30px;
 }
 
-.navLink{
+.navLink {
   color: white;
 }
 
-.navLink:hover{
+.navLink:hover {
   cursor: pointer;
   color: var(--color-primary);
 }
 
 /* MENU */
-.containerMenu{
-  background-image: url("../imgs/Backgrounds/backgroundMain.png") ;
+.containerMenu {
+  background-image: url("../imgs/Backgrounds/backgroundMain.png");
   color: white;
   padding: 3%;
   margin: 1%;
   border-radius: 20px;
 }
 
-.flexRow{
+.flexRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.signika{
-  font-family: 'Signika';
+.signika {
+  font-family: "Signika";
 }
 
-.josefin{
-  font-family: 'Josefin';
+.josefin {
+  font-family: "Josefin";
 }
 
-.priceMenu{
+.priceMenu {
   color: var(--color-primary);
   font-size: 20px;
   width: 50%;
 }
 
-.ligneJaune{
+.ligneJaune {
   background-color: var(--color-primary);
   width: 100%;
   height: 2px;
 }
 
-.ligneBlanche{
+.ligneBlanche {
   background-color: white;
   width: 100%;
   height: 1px;
   margin-top: 4px;
 }
 
-.letterSpace{
+.letterSpace {
   letter-spacing: 2px;
 }
 
-.imagePlatBulle{
-  display: block; 
-  margin: 0 auto; 
-  width: 200px; 
-  height: 200px; 
-  object-fit: cover; 
+.imagePlatBulle {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 50%;
   margin: 24px;
 }
 
-.centerFlex{
+.centerFlex {
   display: flex;
   justify-content: center;
 }
 
-/* FORMULAIRE */ 
-
-.containerFormulaire{
-  width: 50%;
+.boxMenu {
+  text-align: center;
+  padding: 24px;
 }
 
+/* FORMULAIRE */
+
+.containerFormulaire {
+  width: 50%;
+}
 
 @media only screen and (min-width: 480px) {
   .backgroundHeader {
@@ -210,14 +212,14 @@ p {
 }
 
 h2 {
-  font-family: 'Electrolize';
+  font-family: "Electrolize";
   font-size: 1.2em;
   color: var(--color-secondary);
 }
 
 .home-separator {
   width: 50%;
-  border : 1px solid var(--color-secondary);
+  border: 1px solid var(--color-secondary);
   margin: 20px auto;
 }
 .hero-flavor-text {
@@ -227,7 +229,7 @@ h2 {
 
 /*Main illustrated section*/
 .illustration-section {
-  background-image: url('../imgs/Backgrounds/backgroundMain.png');
+  background-image: url("../imgs/Backgrounds/backgroundMain.png");
   padding-bottom: 20px;
 }
 .illustration {
@@ -237,7 +239,7 @@ h2 {
 }
 .illustration-section p {
   font-size: 22px;
-  font-family: 'Calibri';
+  font-family: "Calibri";
   font-style: italic;
   color: white;
   padding: 68px 18px;
@@ -254,7 +256,7 @@ h2 {
   font-size: 2.5em;
   color: white;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 #bottom-illustration-text {
   text-align: center;
@@ -284,7 +286,7 @@ h2 {
 #reviews-title {
   position: relative;
   top: 54px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   font-size: 2em;
   padding: 12px;
@@ -312,7 +314,8 @@ h2 {
   display: flex;
   overflow: hidden;
 }
-.carousel-picture, .carousel-main-picture {
+.carousel-picture,
+.carousel-main-picture {
   min-width: 100%;
   transition: transform 0.5s ease-in-out;
 }
@@ -332,7 +335,7 @@ h2 {
 
 /* Footer */
 footer {
-  background-image: url('../imgs/Backgrounds/backgroundHeader.png');
+  background-image: url("../imgs/Backgrounds/backgroundHeader.png");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -340,7 +343,7 @@ footer {
   text-align: center;
 }
 footer p {
-  font-family: 'Calibri', sans-serif;
+  font-family: "Calibri", sans-serif;
   font-size: 1.3em;
 }
 .footer-box-container {
@@ -358,12 +361,12 @@ footer p {
 .footer-title {
   font-size: 1.8em;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 .footer-phone-number {
   font-size: 2em;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   color: var(--color-primary);
 }
 .footer-logo {
