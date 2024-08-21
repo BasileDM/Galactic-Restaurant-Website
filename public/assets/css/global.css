@@ -5,8 +5,8 @@
 
 @font-face {
   font-family: "Electrolize";
-  src: url(../fonts/Electrolize-Regular.woff2) format("woff2"),
-    url(../fonts/Electrolize-Regular.woff) format("woff"),
+  src: url(../fonts/electrolize-regular-webfont.woff2) format("woff2"),
+    url(../fonts/bevietnam-lightitalic-webfont.woff) format("woff"),
     url(../fonts/Electrolize-Regular.ttf) format("truetype");
 }
 @font-face {
@@ -306,6 +306,7 @@ h2 {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
+  background-color: black;
 }
 #reservation-button:hover {
   background-color: var(--color-primary);
@@ -407,12 +408,65 @@ footer p {
 .footer-copyright {
   font-size: 0.8em;
   opacity: 0.5;
-
   p {
     margin: 0;
   }
 }
 
+/* Reservation page */
+.yellow-text {
+  color: var(--color-primary);
+}
+.ntr-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+.title-smaller {
+  font-size: 0.8em;
+}
+.title-normal {
+  font-size: 1em;
+}
+.reservation-form-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 16px;
+  form {
+    width: 90%;
+    border: 5px solid var(--color-secondary);
+    padding: 30px;
+    margin-bottom: 20px;
+    label {
+      font-family: 'Bevietnam';
+    }
+    input, textarea {
+      width: 100%;
+      margin: 12px auto;
+      padding: 4px;
+      font-family: 'Bevietnam';
+    }
+  }
+}
+#form-reservation-button-final {
+  width: 100%;
+  border: 3px solid var(--color-primary);
+  margin: 12px auto;
+  padding: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+#form-reservation-button-final:hover {
+  background-color: white;
+  color: var(--color-primary);
+  transition: 0.5s;
+}
+=======
 /* LOGIN PAGE */
 
 #login-form {

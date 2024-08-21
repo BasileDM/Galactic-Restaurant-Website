@@ -20,7 +20,7 @@
             Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor enim dui lectus id.
             Tristique dignissim pharetra feugiat mattis non. Vivamus libero feugiat odio eget potenti.
         </p>
-        <div id="reservation-button">Réserver</div>
+        <div id="reservation-button" onclick="location.href='reservation'">Réserver</div>
     </section>
     <section>
         <h2 id="reviews-title">Ce que nos clients disent</h2>

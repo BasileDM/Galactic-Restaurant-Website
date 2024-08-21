@@ -40,5 +40,8 @@ class HomeController
         exit;
     }
 
-
+    public function displayReservationPage() {
+        $this->render("reservationForm");
+        exit;
+    }
 }
