@@ -27,6 +27,20 @@ switch ($route)
   case HOME_URL . 'pageAccueilAdmin':
     $adminController->affichePageAdmin();
     break;
+    
+  //AUTHENTICATION PAGE
+  case HOME_URL . 'login':
+    $adminController->afficheLogin();
+    break;
+
+  case HOME_URL . 'aPropos':
+    $homeController->affichePagePropos();
+    break;
+
+  // APRES AUTHENTIFICATION 
+  case HOME_URL . 'admin':
+    $adminController->affichePageAdmin();
+    break;
 
   case HOME_URL . 'ajoutPlat':
     $adminController->affichePageCreationPlats();
@@ -45,9 +59,12 @@ switch ($route)
     $resaController->processReservation() : 
     $homeController->displayReservationPage();
     break;
-
+    
+  case HOME_URL . 'supprimerDish':
+    $dishController->supprimerDish();
+    exit;
+    
   default:
-    $homeController->affichePageAccueil();
+    $homeController->affichePage404();
     break;
-  
 }

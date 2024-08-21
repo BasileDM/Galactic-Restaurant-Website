@@ -15,13 +15,28 @@ class HomeController
         exit;
     }
 
+    public function affichePage404()
+    {
+      $this->render("404");
+      exit;
+    }
+  
+    public function affichePagePropos()
+    {
+        $this->render("propos");
+        exit;
+    }
+
     public function affichePageMenu()
     {
         $dishRepo = new DishRepository();
         $entrees = $dishRepo->recupererEntrees();
         $plats = $dishRepo->recupererPlats();
         $desserts = $dishRepo->recupererDesserts();
-        $this->render("menu", ['entrees' => $entrees, 'plats' => $plats, 'desserts' => $desserts]);
+        $entreesRobot = $dishRepo->recupererEntreesRobot();
+        $platsRobot = $dishRepo->recupererPlatsRobot();
+        $dessertsRobot = $dishRepo->recupererDessertsRobot();
+        $this->render("menu", ['entrees' => $entrees, 'plats' => $plats, 'desserts' => $desserts, 'entreesRobot' => $entreesRobot, 'platsRobot' => $platsRobot, 'dessertsRobot' => $dessertsRobot]);
         exit;
     }
 
