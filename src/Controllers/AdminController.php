@@ -9,6 +9,12 @@ class AdminController
 {
     use Reponse;
 
+    public function afficheLogin() 
+    {
+        $this->render("login");
+        exit;
+    }
+
     public function affichePageAdmin()
     {
         $dishRepo = new DishRepository();

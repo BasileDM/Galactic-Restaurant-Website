@@ -381,3 +381,27 @@ footer p {
     margin: 0;
   }
 }
+
+/* LOGIN PAGE */
+
+#login-form {
+  background-color: rgb(217, 217, 217);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+#input-email-admin {
+  background-color: rgb(164, 164, 164);
+  border-radius: 3px;  
+}
+
+#input-password-admin {
+  background-color: rgb(164, 164, 164);
+  border-radius: 3px;
+}
+
+#button-connect-admin {
+  background-color: #e1e138;
+  border: #e1e138;
+  color: black;
+  }

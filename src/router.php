@@ -20,6 +20,10 @@ switch ($route)
     case HOME_URL . 'menu':
       $homeController->affichePageMenu();
       break;
+//AUTHETICATION PAGE
+      case HOME_URL . 'login':
+        $adminController->afficheLogin();
+        break;
 
       // APRES AUTHENTIFICATION 
       case HOME_URL . 'admin':
