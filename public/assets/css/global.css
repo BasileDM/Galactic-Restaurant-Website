@@ -85,6 +85,7 @@ nav {
   gap: 12px;
   padding: 0px;
   color: white;
+  z-index: 12;
 }
 
 .backgroundNav {
@@ -111,6 +112,8 @@ nav {
 
 /* MENU */
 .containerMenu {
+  display: flex;
+  flex-direction: column;
   background-image: url("../imgs/Backgrounds/backgroundMain.png");
   color: white;
   padding: 3%;
@@ -135,7 +138,11 @@ nav {
 .priceMenu {
   color: var(--color-primary);
   font-size: 20px;
-  width: 50%;
+  width: 12%;
+}
+
+.w-desc{
+  width: 80%;
 }
 
 .ligneJaune {
@@ -181,6 +188,12 @@ nav {
   width: 50%;
 }
 
+/* A PROPOS */
+
+.tailleImageTarte{
+  width: 50%;
+}
+
 @media only screen and (min-width: 480px) {
   .backgroundHeader {
     display: flex;
@@ -203,6 +216,24 @@ nav {
     background-image: none;
     font-size: 24px;
   }
+
+  .containerMenu{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .tailleContainerMenu{
+    width: 50%;
+  }
+
+  .imagePlatBulle{
+    width: 300px;
+    height: 300px;
+  }
+
+  .inverse{
+    flex-direction: row-reverse;
+  }
+
 }
 
 /* Homepage */

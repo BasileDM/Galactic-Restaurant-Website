@@ -21,6 +21,10 @@ switch ($route)
       $homeController->affichePageMenu();
       break;
 
+      case HOME_URL . 'aPropos':
+        $homeController->affichePagePropos();
+        break;
+
       // APRES AUTHENTIFICATION 
       case HOME_URL . 'admin':
         $adminController->affichePageAdmin();
