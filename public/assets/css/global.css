@@ -393,11 +393,27 @@ footer p {
 .title-normal {
   font-size: 1em;
 }
-.reservation-form-container {
+.reservation-form-contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  padding: 16px;
+  form {
+    width: 90%;
+    border: 5px solid var(--color-secondary);
+    padding: 30px;
+    margin-bottom: 20px;
+    label {
+      font-family: 'Bevietnam';
+    }
+    input, textarea {
+      width: 100%;
+      margin: 12px auto;
+      padding: 4px;
+      font-family: 'Bevietnam';
+    }
+  }
 }
 #form-reservation-button-final {
   width: 100%;
@@ -409,4 +425,10 @@ footer p {
   cursor: pointer;
   text-align: center;
   background-color: var(--color-primary);
+  cursor: pointer;
+}
+#form-reservation-button-final:hover {
+  background-color: white;
+  color: var(--color-primary);
+  transition: 0.5s;
 }
