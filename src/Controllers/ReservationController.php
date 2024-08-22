@@ -16,7 +16,6 @@ class ReservationController
       $this->render('reservationForm', ['error' => 'Veuillez remplir tous les champs']);
     }
 
-
     else
     {
       $reservation = new Reservation(
@@ -30,7 +29,17 @@ class ReservationController
       );
 
       $reservationRepository = new ReservationRepository();
-      $reservationRepository->save($reservation);
+      $newID = $reservationRepository->save($reservation);
+      if ($newID)
+      {
+        $reservation->setId($newID);
+        $_POST['nom'] = $_POST['email'] = $_POST['date'] = $_POST['time'] = $_POST['number'] = null;
+        $this->render('reservationForm', ['reservation' => $reservation, 'success' => 'Votre réservation a bien été enregistrée ! Vérifiez votre boite mail.']);
+      }
+      else
+      {
+        $this->render('reservationForm', ['error' => 'Une erreur est survenue...']);
+      }
     }
   }
 }

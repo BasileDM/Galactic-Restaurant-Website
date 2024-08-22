@@ -32,6 +32,6 @@ class ReservationRepository
     ]);
 
     $reservation->setId($this->DB->lastInsertId());
-    return $this->DB->lastInsertId();
+    return $reservation->getId();
   }
 }

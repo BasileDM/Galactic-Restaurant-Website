@@ -1,7 +1,12 @@
 <?php
-include_once __DIR__ . '/Includes/header.php'; ?>
+include_once __DIR__ . '/Includes/header.php';
+?>
 
 <div class="reservation-form-contact-container">
+  <?php if (isset($success))
+  {
+    echo '<p style="color:green; text-align:center; font-weight:bold">' . $success . '</p>';
+  } ?>
   <form action="<?php echo HOME_URL; ?>processReservation" method="post">
     <span class="yellow-text ntr-title">Réservation</span>
     <h2 class="ntr-title">Réserver une table</h2>
