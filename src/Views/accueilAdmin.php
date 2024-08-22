@@ -71,8 +71,8 @@ include_once __DIR__ . '/Includes/header.php';
                                                             <label class="form-check-label" for="flexCheckDefault">
                                                             </label>
                                                             <a href="">
-                                                        <img src="assets/imgs/iconCrayon.png" alt="icone pen"></a>
-                                                        <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
+                                                        <img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
 
                                                         </td>
                                                 </tr>
@@ -113,8 +113,8 @@ include_once __DIR__ . '/Includes/header.php';
                                                             <label class="form-check-label" for="flexCheckDefault">
                                                             </label>
                                                             <a href="">
-                                                        <img src="assets/imgs/iconCrayon.png" alt="icone pen"></a>
-                                                        <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
+                                                        <img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
 
                                                         </td>
                                                 </tr>
@@ -156,8 +156,8 @@ include_once __DIR__ . '/Includes/header.php';
                                                             <label class="form-check-label" for="flexCheckDefault">
                                                             </label>
                                                             <a href="">
-                                                        <img src="assets/imgs/iconCrayon.png" alt="icone pen"></a>
-                                                        <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/iconBin.png" alt="icon bin"></a>
+                                                        <img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
 
                                                         </td>
                                                 </tr>
