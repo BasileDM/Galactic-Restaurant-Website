@@ -11,18 +11,26 @@ class ReservationController
   use Reponse;
   public function processReservation()
   {
-    if (!isset($_POST['nom']) || !isset($_POST['email']) || !isset($_POST['date']) || !isset($_POST['time']) || !isset($_POST['number']))
+    if (empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['date']) || empty($_POST['time']) || empty($_POST['number']))
     {
-      $this->render('reservationForm');
+      $this->render('reservationForm', ['error' => 'Veuillez remplir tous les champs']);
     }
+
+
     else
     {
-      // $reservation = new Reservation(null, $_POST['lastName'], $_POST['mail'], $_POST['resaDate'], $_POST['resaTime'], 1, 0);
-      // $reservationRepository = new ReservationRepository();
-      // $reservationRepository->addReservation($reservation);
-      // $this->render('formulaireReservation');
-      echo "Processing reservation...";
-      var_dump($_POST);
+      $reservation = new Reservation(
+        null,
+        $_POST['nom'],
+        $_POST['email'],
+        $_POST['date'],
+        $_POST['time'],
+        $_POST['number'],
+        0
+      );
+
+      $reservationRepository = new ReservationRepository();
+      $reservationRepository->save($reservation);
     }
   }
 }
