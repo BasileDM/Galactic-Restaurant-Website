@@ -62,7 +62,12 @@ switch ($route)
     
   case HOME_URL . 'supprimerDish':
     $dishController->supprimerDish();
-    exit;
+    break;
+
+  case HOME_URL . 'getSeatsAvailability':
+    $seats = $resaController->seatsAvailability();
+    echo json_encode($seats);
+    break;
     
   default:
     $homeController->affichePage404();

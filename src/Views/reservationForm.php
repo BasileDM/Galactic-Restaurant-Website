@@ -2,6 +2,7 @@
 include_once __DIR__ . '/Includes/header.php';
 ?>
 
+<script src="./assets/js/seatsAvailability.js"></script>
 <div class="reservation-form-contact-container">
   <?php if (isset($success))
   {
@@ -24,6 +25,7 @@ include_once __DIR__ . '/Includes/header.php';
       <input type="time" id="time" name="time" value="<?php echo isset($_POST['time']) ? htmlspecialchars($_POST['time']) : ''; ?>">
 
       <label for="number">Nombre de convives*</label>
+      <div><span id="available-seats"></span></div>
       <input type="number" id="number" name="number" value="<?php echo isset($_POST['number']) ? htmlspecialchars($_POST['number']) : ''; ?>">
     </div>
     <button type="submit" id="form-reservation-button-final">Réserver</button>

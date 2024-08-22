@@ -4,6 +4,8 @@ define('DB_NAME', '');
 define('DB_USER', '');
 define('DB_PWD', '');
 
+define('MAX_GUESTS', 60);
+
 // EN LOCAL :
 define('HOME_URL', '/');
 
