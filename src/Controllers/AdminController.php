@@ -3,6 +3,7 @@
 namespace src\controllers;
 
 use src\Repositories\DishRepository;
+use src\Repositories\ReservationRepository;
 use src\Services\Reponse;
 
 class AdminController
@@ -18,10 +19,12 @@ class AdminController
     public function affichePageAdmin()
     {
         $dishRepo = new DishRepository();
+        $reservationRepo = new ReservationRepository();
         $entrees = $dishRepo->recupererEntrees();
         $plats = $dishRepo->recupererPlats();
         $desserts = $dishRepo->recupererDesserts();
-        $this->render("accueilAdmin", ['entrees' => $entrees, 'plats' => $plats, 'desserts' => $desserts]);
+        $reservations = $reservationRepo->getAllReservation();
+        $this->render("accueilAdmin", ['entrees' => $entrees, 'plats' => $plats, 'desserts' => $desserts, 'reservations' => $reservations]);
         exit;
     }
 

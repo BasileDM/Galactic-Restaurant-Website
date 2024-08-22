@@ -17,4 +17,11 @@ class ReservationRepository
 
     require_once __DIR__ . '/../../config.local.php';
   }
+
+  public function getAllReservation(){
+    $sql = "SELECT * FROM rest_reservation;";
+    $query = $this->DB->query($sql);
+    $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $demandes;
+}
 }
