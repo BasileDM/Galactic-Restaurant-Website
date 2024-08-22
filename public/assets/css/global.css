@@ -138,7 +138,7 @@ nav {
 .priceMenu {
   color: var(--color-primary);
   font-size: 20px;
-  width: 12%;
+  width: 14%;
 }
 
 .w-desc{
@@ -191,17 +191,85 @@ nav {
 /* A PROPOS */
 
 .tailleImageTarte{
+  width: 80%;
+}
+
+.boxImagePropos{
+  padding: 24px;
+}
+
+.flexPropos{
+  display: flex;
+}
+
+.tailleImageCuistots{
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.equipe{
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.divEvent{
+  text-align: center;
+  padding: 24px;
+}
+
+.titreEvent{
+  font-size: 2.3em;
+}
+
+.imageCuistot{
   width: 50%;
+}
+
+.grandContainerCuistots{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.containerCuistot{
+  padding: 16px 0px;
+}
+
+.NomGras{
+  font-weight: bold;
+}
+
+.LienssStyle{
+  text-decoration: none;
+}
+
+.containerProposCreativity{
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 480px) {
   .backgroundHeader {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .titrePrincipal{
+    font-size: 55px;
+    padding: 56px;
   }
 
   .containerImage {
-    width: 50%;
+    padding: 28px;
+    width: 12%;
+  }
+
+  .LogoHeader{
+    width: 100%;
   }
 
   h1 {
@@ -232,6 +300,31 @@ nav {
 
   .inverse{
     flex-direction: row-reverse;
+  }
+
+  /* PROPOS */
+
+  .containerProposCreativity{
+    flex-direction: row;
+  }
+
+  .boxImagePropos{
+    width: 50%;
+  }
+
+  .boxtextPropos{
+    align-content: center;
+    font-size: 0.8em;
+  }
+
+  .containerEvent{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .grandContainerCuistots{
+    display: flex;
+    flex-direction: row;
   }
 
 }
@@ -466,7 +559,7 @@ footer p {
   color: var(--color-primary);
   transition: 0.5s;
 }
-=======
+
 /* LOGIN PAGE */
 
 #login-form {
