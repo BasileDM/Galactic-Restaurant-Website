@@ -34,4 +34,10 @@ class ReservationRepository
     $reservation->setId($this->DB->lastInsertId());
     return $reservation->getId();
   }
+
+  public function getAllReservation(){
+    $sql = "SELECT * FROM rest_reservation;";
+    $query = $this->DB->query($sql);
+    $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $demandes;
 }

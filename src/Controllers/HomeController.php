@@ -2,6 +2,7 @@
 
 namespace src\controllers;
 
+use src\Repositories\CookRepository;
 use src\Repositories\DishRepository;
 use src\Services\Reponse;
 
@@ -23,7 +24,9 @@ class HomeController
   
     public function affichePagePropos()
     {
-        $this->render("propos");
+        $cookRepo = new CookRepository;
+        $cook = $cookRepo->getAllCook();
+        $this->render("propos", ['cook' => $cook]);
         exit;
     }
 

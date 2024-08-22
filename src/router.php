@@ -33,6 +33,11 @@ switch ($route)
     $adminController->afficheLogin();
     break;
 
+    case HOME_URL . 'traitementLogin':
+      $adminController->traiterLogin();
+      break;
+    
+
   case HOME_URL . 'aPropos':
     $homeController->affichePagePropos();
     break;
