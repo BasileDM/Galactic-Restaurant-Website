@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       availableSpotsElement.style.color = "red";
       availableSpotsElement.textContent = "Il n'y a plus de places disponibles pour cette date.";
       return;
-
     } else {
       document.getElementById("form-reservation-button-final").disabled = false;
       document.getElementById("form-reservation-button-final").style.cursor = "pointer";
@@ -37,4 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let datePicker = document.getElementById("date");
   datePicker.addEventListener("change", checkAvailability);
+  checkAvailability();
 });
