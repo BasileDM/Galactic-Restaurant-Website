@@ -1,13 +1,10 @@
 <?php
 include_once __DIR__ . '/Includes/header.php';
 
-var_dump($_SESSION);
 
 $userRole = $_SESSION['utilisateur']['role'] ?? '';
 
-echo "<script>console.log('User Role: " . $userRole . "');</script>";
 
-var_dump($userRole)
 ?>
 <script defer src="assets/js/scriptAdmin.js"></script>
 
@@ -223,45 +220,6 @@ var_dump($userRole)
             </div>
         </div>
     </div>
-
-    
-
-    <h3>Les réservations</h3>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nom prénom</th>
-                <th scope="col">Mail</th>
-                <th scope="col">Date et heure</th>
-                <th scope="col">Nombre de personne</th>
-                <th scope="col">Validé</th>
-            </tr>
-        </thead>
-        <?php foreach ($reservations as $reservation)
-        { ?>
-            <tbody>
-                <tr>
-                    <td><?= $reservation['lastName'] ?></td>
-                    <td><?= $reservation['mail'] ?></td>
-                    <td><?= $reservation['resaDate'] ?> à <?= $reservation['resaTime'] ?></td>
-                    <td><?= $reservation['numberOfGuests'] ?></td>
-                    <td> <?php if ($reservation['isValide'])
-                            {
-                                echo 'valide';
-                            }
-                            else
-                            {
-                                echo 'pas validé';
-                            }; ?></td>
-
-                </tr>
-
-
-            <?php
-        } ?>
-            </tbody>
-    </table>
 
 </div>
 
