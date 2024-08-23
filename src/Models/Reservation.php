@@ -2,27 +2,27 @@
 
 namespace src\Models;
 
+use src\Repositories\ReservationRepository;
+
 class Reservation
 {
     private $id;
-    private $lastName;
+    private $name;
     private $mail;
-    private $resaDate;
-    private $resaTime;
+    private $date;
+    private $time;
     private $numberOfGuests;
-    private $isValide;
-    private $idAdmin;
+    private $isValid;
 
-    function __construct($id, $lastName, $mail, $resaDate, $resaTime, $numberOfGuests, $isValide, $idAdmin)
+    function __construct($id, $name, $mail, $date, $time, $numberOfGuests, $isValid)
     {
         $this->id = $id;
-        $this->lastName = $lastName;
+        $this->name = $name;
         $this->mail = $mail;
-        $this->resaDate = $resaDate;
-        $this->resaTime = $resaTime;
+        $this->date = $date;
+        $this->time = $time;
         $this->numberOfGuests = $numberOfGuests;
-        $this->isValide = $isValide;
-        $this->idAdmin = $idAdmin;
+        $this->isValid = $isValid;
     }
 
     /**
@@ -46,17 +46,17 @@ class Reservation
     /**
      * Get the value of lastName
      */
-    public function getLastName()
+    public function getName()
     {
-        return $this->lastName;
+        return $this->name;
     }
 
     /**
      * Set the value of lastName
      */
-    public function setLastName($lastName): self
+    public function setName($name): self
     {
-        $this->lastName = $lastName;
+        $this->name = $name;
 
         return $this;
     }
@@ -82,17 +82,17 @@ class Reservation
     /**
      * Get the value of resaDate
      */
-    public function getResaDate()
+    public function getDate()
     {
-        return $this->resaDate;
+        return $this->date;
     }
 
     /**
      * Set the value of resaDate
      */
-    public function setResaDate($resaDate): self
+    public function setDate($date): self
     {
-        $this->resaDate = $resaDate;
+        $this->date = $date;
 
         return $this;
     }
@@ -100,17 +100,17 @@ class Reservation
     /**
      * Get the value of resaTime
      */
-    public function getResaTime()
+    public function getTime()
     {
-        return $this->resaTime;
+        return $this->time;
     }
 
     /**
      * Set the value of resaTime
      */
-    public function setResaTime($resaTime): self
+    public function setTime($time): self
     {
-        $this->resaTime = $resaTime;
+        $this->time = $time;
 
         return $this;
     }
@@ -134,38 +134,25 @@ class Reservation
     }
 
     /**
-     * Get the value of idAdmin
-     */
-    public function getIdAdmin()
-    {
-        return $this->idAdmin;
-    }
-
-    /**
-     * Set the value of idAdmin
-     */
-    public function setIdAdmin($idAdmin): self
-    {
-        $this->idAdmin = $idAdmin;
-
-        return $this;
-    }
-
-    /**
      * Get the value of isValide
      */
-    public function getIsValide()
+    public function getIsValid()
     {
-        return $this->isValide;
+        return $this->isValid;
     }
 
     /**
      * Set the value of isValide
      */
-    public function setIsValide($isValide): self
+    public function setIsValid($isValid): self
     {
-        $this->isValide = $isValide;
+        $this->isValid = $isValid;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->id;
     }
 }

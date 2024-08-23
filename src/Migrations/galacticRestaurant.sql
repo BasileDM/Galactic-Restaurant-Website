@@ -11,7 +11,7 @@ CREATE TABLE Rest_Cook(
 
 CREATE TABLE Rest_Reservation(
    id_resa INT AUTO_INCREMENT,
-   lastName VARCHAR(250) ,
+   lastName VARCHAR(50) ,
    mail VARCHAR(100) ,
    resaDate DATE,
    resaTime TIME,
