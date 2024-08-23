@@ -79,6 +79,11 @@ switch ($route)
     }
     break;
 
+  case HOME_URL . 'cancel':
+    $resaController->cancelReservation();
+    $homeController->render("reservationForm", ['success' => 'Votre réservation a bien été annulée !']);
+    break;
+
   default:
     $homeController->affichePage404();
     break;

@@ -80,13 +80,19 @@ class ReservationController
         $_POST['nom'] = $_POST['email'] = $_POST['date'] = $_POST['time'] = $_POST['number'] = null;
 
         $helperService = new HelperService();
-        $helperService->sendMail(
-          $reservation->getName(), 
-          $reservation->getMail(), 
-          $reservation->getDate(), 
-          $reservation->getTime(), 
+        $sentMail = $helperService->sendMail(
+          $reservation->getName(),
+          $reservation->getMail(),
+          $reservation->getDate(),
+          $reservation->getTime(),
           $reservation->getNumberOfGuests()
         );
+
+        if (!$sentMail)
+        {
+          $this->render('reservationForm', ['error' => 'Une erreur est survenue lors de l\'envoi du mail...']);
+          return;
+        }
 
         $this->render('reservationForm', [
           'reservation' => $reservation,
@@ -105,5 +111,21 @@ class ReservationController
     $helperService = new HelperService();
     $availableSeats = $helperService->calculateAvailableSeats($selectedDate);
     return $availableSeats;
+  }
+
+  public function cancelReservation()
+  {
+    $mailHash = base64_decode($_GET['id']);
+    $reservationRepository = new ReservationRepository();
+    $allReservations = $reservationRepository->getAllReservation();
+
+    foreach ($allReservations as $reservation)
+    {
+      if (password_verify($reservation['mail'], $mailHash))
+      {
+        $reservationRepository->delete($reservation['id_resa']);
+        $this->render('reservationForm', ['success' => 'Votre réservation a bien été annulée !']);
+      }
+    }
   }
 }
