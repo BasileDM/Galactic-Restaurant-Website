@@ -2,6 +2,7 @@
 
 namespace src\controllers;
 
+use src\Services\SeatsManagement;
 use src\Models\Reservation;
 use src\Repositories\ReservationRepository;
 use src\Services\Reponse;
@@ -78,8 +79,10 @@ class ReservationController
     }
   }
 
-  public function seatsAvailability()
+  public function getAvailableSeats($selectedDate)
   {
-    return MAX_GUESTS;
+    $seatsManagement = new SeatsManagement();
+    $availableSeats = $seatsManagement->calculateAvailableSeats($selectedDate);
+    return $availableSeats;
   }
 }

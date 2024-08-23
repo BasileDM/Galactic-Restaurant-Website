@@ -1,11 +1,12 @@
 const API_URL = "/";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("reservationForm");
-
   async function checkAvailability() {
     try {
-      const response = await fetch(API_URL + "getSeatsAvailability");
+      const date = new Date(datePicker.value);
+      const dateString = date.toISOString().slice(0, 10);
+
+      const response = await fetch(API_URL + "getSeatsAvailability?date=" + dateString);
       if (!response.ok) {
         throw new Error("Network response error.");
       }
@@ -23,6 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let datePicker = document.getElementById("date");
   datePicker.addEventListener("change", checkAvailability);
-
-  checkAvailability();
 });

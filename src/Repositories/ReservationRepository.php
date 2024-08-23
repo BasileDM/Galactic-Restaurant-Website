@@ -43,4 +43,15 @@ class ReservationRepository
     $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
     return $demandes;
   }
+
+  public function getTodaysReservations($selectedDate) {
+
+    $sql = "SELECT * FROM rest_reservation WHERE resaDate = :selectedDate;";
+    $query = $this->DB->prepare($sql);
+    $query->execute([
+      ':selectedDate' => $selectedDate
+    ]);
+    $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $demandes;
+  }
 }

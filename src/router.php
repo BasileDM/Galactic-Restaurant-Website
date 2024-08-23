@@ -23,26 +23,26 @@ switch ($route)
     $homeController->affichePageMenu();
     break;
 
-  // APRES AUTHENTIFICATION 
+    // APRES AUTHENTIFICATION 
   case HOME_URL . 'pageAccueilAdmin':
     $adminController->affichePageAdmin();
     break;
-    
-  //AUTHENTICATION PAGE
+
+    //AUTHENTICATION PAGE
   case HOME_URL . 'login':
     $adminController->afficheLogin();
     break;
 
-    case HOME_URL . 'traitementLogin':
-      $adminController->traiterLogin();
-      break;
-    
+  case HOME_URL . 'traitementLogin':
+    $adminController->traiterLogin();
+    break;
+
 
   case HOME_URL . 'aPropos':
     $homeController->affichePagePropos();
     break;
 
-  // APRES AUTHENTIFICATION 
+    // APRES AUTHENTIFICATION 
   case HOME_URL . 'admin':
     $adminController->affichePageAdmin();
     break;
@@ -54,26 +54,33 @@ switch ($route)
   case HOME_URL . 'traiterFormulaireDish':
     $dishController->traiterFormulaireDish();
     break;
-  
+
   case HOME_URL . 'reservation':
     $homeController->displayReservationPage();
     break;
-  
+
   case HOME_URL . 'processReservation':
-    $_SERVER['REQUEST_METHOD'] === 'POST' ? 
-    $resaController->processReservation() : 
-    $homeController->displayReservationPage();
+    $_SERVER['REQUEST_METHOD'] === 'POST' ?
+      $resaController->processReservation() :
+      $homeController->displayReservationPage();
     break;
-    
+
   case HOME_URL . 'supprimerDish':
     $dishController->supprimerDish();
     break;
 
   case HOME_URL . 'getSeatsAvailability':
-    $seats = $resaController->seatsAvailability();
-    echo json_encode($seats);
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['date']))
+    {
+      $seats = $resaController->getAvailableSeats($_GET['date']);
+      echo json_encode($seats);
+    }
+    else
+    {
+      $homeController->displayReservationPage();
+    }
     break;
-    
+
   default:
     $homeController->affichePage404();
     break;
