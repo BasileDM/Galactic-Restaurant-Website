@@ -17,9 +17,10 @@ class ReservationRepository
 
     require_once __DIR__ . '/../../config.local.php';
   }
-  
-  public function save(Reservation $reservation) {
-    
+
+  public function save(Reservation $reservation)
+  {
+
     $sql = "INSERT INTO rest_reservation (lastName, mail, resaDate, resaTime, numberOfGuests, isValide) VALUES (:name, :mail, :date, :time, :number_of_guests, :is_valid)";
     $query = $this->DB->prepare($sql);
     $query->execute([
@@ -35,9 +36,22 @@ class ReservationRepository
     return $reservation->getId();
   }
 
-  public function getAllReservation(){
+  public function getAllReservation()
+  {
     $sql = "SELECT * FROM rest_reservation;";
     $query = $this->DB->query($sql);
     $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
     return $demandes;
+  }
+
+  public function getTodaysReservations($selectedDate) {
+
+    $sql = "SELECT * FROM rest_reservation WHERE resaDate = :selectedDate;";
+    $query = $this->DB->prepare($sql);
+    $query->execute([
+      ':selectedDate' => $selectedDate
+    ]);
+    $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $demandes;
+  }
 }
