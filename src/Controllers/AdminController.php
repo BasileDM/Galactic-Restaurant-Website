@@ -30,10 +30,11 @@ class AdminController
             $admin = $adminRepository->verifyUser($username, $mdp);
     
             if($admin) {
-                session_start();
+                // session_start();
     
                 $_SESSION['connecte'] = true;
                 $_SESSION['utilisateur'] = $admin;
+                
                 
                 header('location:' . HOME_URL . 'admin');
                 die();

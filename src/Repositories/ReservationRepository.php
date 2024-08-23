@@ -41,3 +41,4 @@ class ReservationRepository
     $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
     return $demandes;
 }
+}
