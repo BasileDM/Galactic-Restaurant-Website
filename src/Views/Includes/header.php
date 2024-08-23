@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$current_page = basename($_SERVER['REQUEST_URI'], ".php");
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +15,8 @@
     <script>
         const HOME_URL = "<?= HOME_URL ?>";
     </script>
+    <script defer src="assets/js/script.js"></script>
+
 </head>
 
 <header>
@@ -21,11 +27,11 @@
         <div>
             <h1 class="titrePrincipal"> L'etoile Doree </h1>
             <nav class="backgroundNav">
-                <a class="navLink" href=<?php echo HOME_URL; ?>>Accueil</a>
-                <a class="navLink" href=<?php echo HOME_URL . 'menu'; ?>> Menu</a>
-                <a class="navLink" href=<?php echo HOME_URL . 'reservation'; ?>> Réserver</a>
-                <a class="navLink" href=<?php echo HOME_URL . 'aPropos'; ?>> A propos</a>
-                <a class="navLink" href=<?php echo HOME_URL . 'contact'; ?>> Contact</a>
+                <a class="navLink <?php echo $current_page == '' || $current_page == 'index' ? 'active' : ''; ?>" href="<?php echo HOME_URL; ?>">Accueil</a>
+                <a class="navLink <?php echo $current_page == 'menu' ? 'active' : ''; ?>" href="<?php echo HOME_URL . 'menu'; ?>"> Menu</a>
+                <a class="navLink <?php echo $current_page == 'reservation' ? 'active' : ''; ?>" href="<?php echo HOME_URL . 'reservation'; ?>"> Réserver</a>
+                <a class="navLink <?php echo $current_page == 'aPropos' ? 'active' : ''; ?>" href="<?php echo HOME_URL . 'aPropos'; ?>"> A propos</a>
+                <a id="contact" class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>"> Contact</a>
             </nav>
         </div>
     </div>

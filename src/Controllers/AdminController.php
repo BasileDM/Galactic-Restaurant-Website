@@ -30,10 +30,11 @@ class AdminController
             $admin = $adminRepository->verifyUser($username, $mdp);
     
             if($admin) {
-                session_start();
+                // session_start();
     
                 $_SESSION['connecte'] = true;
                 $_SESSION['utilisateur'] = $admin;
+                
                 
                 header('location:' . HOME_URL . 'admin');
                 die();
@@ -49,9 +50,9 @@ class AdminController
     {
         $dishRepo = new DishRepository();
         $reservationRepo = new ReservationRepository();
-        $entrees = $dishRepo->recupererEntrees();
-        $plats = $dishRepo->recupererPlats();
-        $desserts = $dishRepo->recupererDesserts();
+        $entrees = $dishRepo->recupererToutesLesEntrees();
+        $plats = $dishRepo->recupererTousLesPlats();
+        $desserts = $dishRepo->recupererTousLesDesserts();
         $reservations = $reservationRepo->getAllReservation();
         $this->render("accueilAdmin", ['entrees' => $entrees, 'plats' => $plats, 'desserts' => $desserts, 'reservations' => $reservations]);
         exit;
