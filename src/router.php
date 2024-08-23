@@ -61,7 +61,7 @@ switch ($route)
 
   case HOME_URL . 'processReservation':
     $_SERVER['REQUEST_METHOD'] === 'POST' ?
-      $resaController->processReservation() :
+      $resaController->processReservation($_POST['date']) :
       $homeController->displayReservationPage();
     break;
 

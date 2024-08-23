@@ -10,7 +10,7 @@ use src\Services\Reponse;
 class ReservationController
 {
   use Reponse;
-  public function processReservation()
+  public function processReservation($selectedDate)
   {
     $name = htmlspecialchars(trim($_POST['nom']));
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
@@ -42,11 +42,21 @@ class ReservationController
       return;
     }
 
-    // if ($number <= 0 || $number > 20)
-    // {
-    //   $this->render('reservationForm', ['error' => 'Number of guests must be between 1 and 20.']);
-    //   return;
-    // }
+    if ($number <= 0 || $number > 20 || !filter_var($number, FILTER_VALIDATE_INT))
+    {
+      $this->render('reservationForm', ['error' => 'Number of guests must be between 1 and 20.']);
+      return;
+    }
+
+    if ($number % 2 != 0) {
+      $number += 1;
+    }
+    
+    if ($this->getAvailableSeats($date) < $number)
+    {
+      $this->render('reservationForm', ['error' => 'Il n\'y a pas assez de places disponibles.']);
+      return;
+    }
 
     else
     {
