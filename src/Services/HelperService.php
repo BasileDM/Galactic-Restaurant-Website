@@ -37,7 +37,7 @@ class HelperService
     $message = "Bonjour " . $name . ",\n\n" . "Merci pour votre réservation pour le " . $resaDate . " à " . $resaTime . " pour " . $numberOfGuests . " invité(s).\n\n" . "Cordialement,\n" . "L'équipe de l'hôtel.";
     $hash = password_hash($mail, PASSWORD_BCRYPT);
     $encryptedMail = base64_encode($hash);
-    $message = $message . "\n\n" . "Pour annuler cliquez sur ce lien : ". HOME_URL . "cancel?id=" . $encryptedMail;
+    $message = $message . "\n\n" . "Pour annuler cliquez sur ce lien : ". FULL_URL . "cancel?id=" . $encryptedMail;
     $headers = "From: L'Étoile Dorée <contact@letoiledoree.com>\r\n";
     $headers .= "Content-Type: text/plain; charset=\"iso-8859-1\"\n";
     $headers .= "Content-Transfer-Encoding: 8bit\n";
