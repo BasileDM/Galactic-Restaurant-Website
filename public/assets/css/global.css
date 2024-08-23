@@ -105,10 +105,11 @@ nav {
   color: white;
 }
 
-.navLink:hover {
+.navLink:hover, .navLink.active {
   cursor: pointer;
   color: var(--color-primary);
 }
+
 
 /* MENU */
 .containerMenu {
@@ -564,7 +565,7 @@ footer p {
 
 #login-form {
   background-color: rgb(217, 217, 217);
-  padding: 3rem;
+  padding: 12px;
   border-radius: 8px;
 }
 

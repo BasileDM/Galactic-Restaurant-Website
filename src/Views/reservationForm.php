@@ -1,22 +1,39 @@
-<?php include_once __DIR__ . '/Includes/header.php'; ?>
+<?php
+include_once __DIR__ . '/Includes/header.php';
+?>
 
+<script src="./assets/js/seatsAvailability.js"></script>
 <div class="reservation-form-contact-container">
-  <form action="processReservation" method="post">
+  <?php if (isset($success))
+  {
+    echo '<p style="color:green; text-align:center; font-weight:bold">' . $success . '</p>';
+  } ?>
+  <form action="<?php echo HOME_URL; ?>reservation" method="post">
     <span class="yellow-text ntr-title">Réservation</span>
     <h2 class="ntr-title">Réserver une table</h2>
     <div class="form-group">
-      <label for="nom">Nom</label>
-      <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre email">
-      <label for="date">Date</label>
-      <input type="date" class="form-control" id="date" name="date">
-      <label for="time">Heure</label>
-      <input type="time" class="form-control" id="time" name="time">
-      <label for="number">Nombre de convives</label>
-      <input type="number" class="form-control" id="number" name="number">
+      <label for="nom">Nom*</label>
+      <input type="text" id="nom" name="nom" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>">
+
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+
+      <label for="date">Date*</label>
+      <input type="date" id="date" name="date" value="<?php echo isset($_POST['date']) ? htmlspecialchars($_POST['date']) : date('Y-m-d'); ?>">
+
+      <label for="time">Heure*</label>
+      <input type="time" id="time" name="time" value="<?php echo isset($_POST['time']) ? htmlspecialchars($_POST['time']) : ''; ?>">
+
+      <label for="number">Nombre de convives*</label>
+      <div><span id="available-seats"></span></div>
+      <input type="number" id="number" name="number" value="<?php echo isset($_POST['number']) ? htmlspecialchars($_POST['number']) : ''; ?>">
     </div>
-    <button type="submit" id="form-reservation-button-final">Réserver</button>
+    <button type="submit" id="form-reservation-button-final" disabled>Réserver</button>
+
+    <?php if (isset($error)) : ?>
+      <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
+    <?php endif; ?>
+
   </form>
   <section>
     <span class="yellow-text ntr-title">L'Étoile dorée</span>
