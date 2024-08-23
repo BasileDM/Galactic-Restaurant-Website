@@ -28,10 +28,19 @@ class DishRepository{
 
     public function recupererEntreesRobot()
     {
-      $sql = "SELECT * FROM rest_dish WHERE id_types=1 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 3;";
+      $sql = "SELECT * FROM rest_dish WHERE id_types=1 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 1;";
       $query = $this->DB->query($sql);
       $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
       return $demandes;
+    }
+
+    public function recupererToutesLesEntrees(){
+      {
+        $sql = "SELECT * FROM rest_dish WHERE id_types=1;";
+        $query = $this->DB->query($sql);
+        $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $demandes;
+      }
     }
 
     public function recupererPlats()
@@ -44,10 +53,19 @@ class DishRepository{
 
     public function recupererPlatsRobot()
     {
-      $sql = "SELECT * FROM rest_dish WHERE id_types=2 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 3;";
+      $sql = "SELECT * FROM rest_dish WHERE id_types=2 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 1;";
       $query = $this->DB->query($sql);
       $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
       return $demandes;
+    }
+
+    public function recupererTousLesPlats(){
+      {
+        $sql = "SELECT * FROM rest_dish WHERE id_types=2;";
+        $query = $this->DB->query($sql);
+        $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $demandes;
+      }
     }
 
     public function recupererDesserts()
@@ -60,10 +78,19 @@ class DishRepository{
 
     public function recupererDessertsRobot()
     {
-      $sql = "SELECT * FROM rest_dish WHERE id_types=3 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 3;";
+      $sql = "SELECT * FROM rest_dish WHERE id_types=3 AND `isAvailable`=1 AND `isRobot`=1 LIMIT 1;";
       $query = $this->DB->query($sql);
       $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
       return $demandes;
+    }
+
+    public function recupererTousLesDesserts(){
+      {
+        $sql = "SELECT * FROM rest_dish WHERE id_types=3;";
+        $query = $this->DB->query($sql);
+        $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $demandes;
+      }
     }
 
     public function ajouterPlats(Dish $dish) {
