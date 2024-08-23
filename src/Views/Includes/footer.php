@@ -10,7 +10,7 @@
       <p> 10:00 - 22:00 </p>
     </div>
     <div class="footer-box">
-      <h3 class="footer-title"> Réservation </h3>
+      <h3 class="footer-title" id="contactResa"> Réservation </h3>
       <p> Urna quam massa urna dolor enim dui Tristique dignissim pharetra feugiat
         Vivamus libero feugiat </p>
       <p class="footer-phone-number"> 06 12 34 56 78 </p>

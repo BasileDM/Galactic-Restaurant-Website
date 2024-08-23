@@ -105,10 +105,11 @@ nav {
   color: white;
 }
 
-.navLink:hover {
+.navLink:hover, .navLink.active {
   cursor: pointer;
   color: var(--color-primary);
 }
+
 
 /* MENU */
 .containerMenu {
