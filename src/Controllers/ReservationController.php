@@ -51,7 +51,7 @@ class ReservationController
     if ($number % 2 != 0) {
       $number += 1;
     }
-    
+
     if ($this->getAvailableSeats($date) < $number)
     {
       $this->render('reservationForm', ['error' => 'Il n\'y a pas assez de places disponibles.']);

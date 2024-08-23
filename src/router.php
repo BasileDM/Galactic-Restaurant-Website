@@ -56,13 +56,15 @@ switch ($route)
     break;
 
   case HOME_URL . 'reservation':
-    $homeController->displayReservationPage();
-    break;
-
-  case HOME_URL . 'processReservation':
-    $_SERVER['REQUEST_METHOD'] === 'POST' ?
-      $resaController->processReservation($_POST['date']) :
+    if ($_SERVER['REQUEST_METHOD'] === 'GET')
+    {
+      $data['error'] = null;
       $homeController->displayReservationPage();
+    }
+    else if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+      $resaController->processReservation($_POST['date']);
+    }
     break;
 
   case HOME_URL . 'supprimerDish':
@@ -74,10 +76,6 @@ switch ($route)
     {
       $seats = $resaController->getAvailableSeats($_GET['date']);
       echo json_encode($seats);
-    }
-    else
-    {
-      $homeController->displayReservationPage();
     }
     break;
 

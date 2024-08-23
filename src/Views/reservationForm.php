@@ -8,7 +8,7 @@ include_once __DIR__ . '/Includes/header.php';
   {
     echo '<p style="color:green; text-align:center; font-weight:bold">' . $success . '</p>';
   } ?>
-  <form action="<?php echo HOME_URL; ?>processReservation" method="post">
+  <form action="<?php echo HOME_URL; ?>reservation" method="post">
     <span class="yellow-text ntr-title">Réservation</span>
     <h2 class="ntr-title">Réserver une table</h2>
     <div class="form-group">
@@ -28,7 +28,7 @@ include_once __DIR__ . '/Includes/header.php';
       <div><span id="available-seats"></span></div>
       <input type="number" id="number" name="number" value="<?php echo isset($_POST['number']) ? htmlspecialchars($_POST['number']) : ''; ?>">
     </div>
-    <button type="submit" id="form-reservation-button-final">Réserver</button>
+    <button type="submit" id="form-reservation-button-final" disabled>Réserver</button>
 
     <?php if (isset($error)) : ?>
       <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
