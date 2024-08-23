@@ -12,7 +12,7 @@ final class Database
 
     public function __construct()
     {
-        $this->config = require_once __DIR__ . '/../../config.php';
+        $this->config = require_once __DIR__ . '/../../config.local.php';
         $this->connexionDB();
     }
 

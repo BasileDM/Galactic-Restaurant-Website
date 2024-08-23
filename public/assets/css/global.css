@@ -1,0 +1,585 @@
+:root {
+  --color-primary: #e1e138;
+  --color-secondary: #080e0f;
+}
+
+@font-face {
+  font-family: "Electrolize";
+  src: url(../fonts/electrolize-regular-webfont.woff2) format("woff2"),
+    url(../fonts/bevietnam-lightitalic-webfont.woff) format("woff"),
+    url(../fonts/Electrolize-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Glipervelz";
+  src: url(../fonts/glipervelz-origy_full-webfont.woff2) format("woff2"),
+    url(../fonts/glipervelz-origy_full-webfont.woff) format("woff"),
+    url(../fonts/glipervelz-origy_full-webfont.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Hackernoon";
+  src: url(../fonts/hackernoonv2-regular-webfont.woff2) format("woff2"),
+    url(../fonts/hackernoonv2-regular-webfont.woff) format("woff"),
+    url(../fonts/hackernoonv2-regular-webfont.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Josefinsans";
+  src: url(../fonts/josefinsans-variablefont-wght-webfont.woff2) format("woff2"),
+    url(../fonts/josefinsans-variablefont_wght-webfont.woff) format("woff"),
+    url(../fonts/JosefinSans-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Signika";
+  src: url(../fonts/signika-regular-webfont.woff2) format("woff2"),
+    url(../fonts/signika-regular-webfont.woff) format("woff"),
+    url(../fonts/Signika-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bevietnam";
+  src: url(../fonts/bevietnam-lightitalic-webfont.woff2) format("woff2"),
+    url(../fonts/bevietnam-lightitalic-webfont.woff) format("woff"),
+    url(../fonts/BeVietnam-LightItalic.ttf) format("truetype");
+}
+
+* {
+  font-family: "Electrolize";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.vietnam {
+  font-family: "Bevietnam";
+}
+
+/* Header */
+.backgroundHeader {
+  background-image: url("../imgs/Backgrounds/backgroundHeader.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 12px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.LogoHeader {
+  width: 20%;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 12px;
+  padding: 0px;
+  color: white;
+  z-index: 12;
+}
+
+.backgroundNav {
+  background-image: url("../imgs/Backgrounds/backgroundHeader.png");
+  border-radius: 30px;
+  margin: 1px;
+  font-size: 12px;
+}
+
+.titrePrincipal {
+  font-family: "Hackernoon";
+  color: white;
+  font-size: 30px;
+}
+
+.navLink {
+  color: white;
+}
+
+.navLink:hover {
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+/* MENU */
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../imgs/Backgrounds/backgroundMain.png");
+  color: white;
+  padding: 3%;
+  margin: 1%;
+  border-radius: 20px;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signika {
+  font-family: "Signika";
+}
+
+.josefin {
+  font-family: "Josefin";
+}
+
+.priceMenu {
+  color: var(--color-primary);
+  font-size: 20px;
+  width: 14%;
+}
+
+.w-desc{
+  width: 80%;
+}
+
+.ligneJaune {
+  background-color: var(--color-primary);
+  width: 100%;
+  height: 2px;
+}
+
+.ligneBlanche {
+  background-color: white;
+  width: 100%;
+  height: 1px;
+  margin-top: 4px;
+}
+
+.letterSpace {
+  letter-spacing: 2px;
+}
+
+.imagePlatBulle {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 24px;
+}
+
+.centerFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.boxMenu {
+  text-align: center;
+  padding: 24px;
+}
+
+/* FORMULAIRE */
+
+.containerFormulaire {
+  width: 50%;
+}
+
+/* A PROPOS */
+
+.tailleImageTarte{
+  width: 80%;
+}
+
+.boxImagePropos{
+  padding: 24px;
+}
+
+.flexPropos{
+  display: flex;
+}
+
+.tailleImageCuistots{
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.equipe{
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.divEvent{
+  text-align: center;
+  padding: 24px;
+}
+
+.titreEvent{
+  font-size: 2.3em;
+}
+
+.imageCuistot{
+  width: 50%;
+}
+
+.grandContainerCuistots{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.containerCuistot{
+  padding: 16px 0px;
+}
+
+.NomGras{
+  font-weight: bold;
+}
+
+.LienssStyle{
+  text-decoration: none;
+}
+
+.containerProposCreativity{
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 480px) {
+  .backgroundHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .titrePrincipal{
+    font-size: 55px;
+    padding: 56px;
+  }
+
+  .containerImage {
+    padding: 28px;
+    width: 12%;
+  }
+
+  .LogoHeader{
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .backgroundNav {
+    background-image: none;
+    font-size: 24px;
+  }
+
+  .containerMenu{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .tailleContainerMenu{
+    width: 50%;
+  }
+
+  .imagePlatBulle{
+    width: 300px;
+    height: 300px;
+  }
+
+  .inverse{
+    flex-direction: row-reverse;
+  }
+
+  /* PROPOS */
+
+  .containerProposCreativity{
+    flex-direction: row;
+  }
+
+  .boxImagePropos{
+    width: 50%;
+  }
+
+  .boxtextPropos{
+    align-content: center;
+    font-size: 0.8em;
+  }
+
+  .containerEvent{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .grandContainerCuistots{
+    display: flex;
+    flex-direction: row;
+  }
+
+}
+
+/* Homepage */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: "Electrolize";
+  font-size: 1.2em;
+  color: var(--color-secondary);
+}
+
+.home-separator {
+  width: 50%;
+  border: 1px solid var(--color-secondary);
+  margin: 20px auto;
+}
+.hero-flavor-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*Main illustrated section*/
+.illustration-section {
+  background-image: url("../imgs/Backgrounds/backgroundMain.png");
+  padding-bottom: 20px;
+}
+.illustration {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.illustration-section p {
+  font-size: 22px;
+  font-family: "Calibri";
+  font-style: italic;
+  color: white;
+  padding: 68px 18px;
+  line-height: 32px;
+  letter-spacing: 4px;
+}
+
+/* booking section*/
+.primary-title-back-stroke {
+  color: var(--color-primary);
+  text-align: center;
+}
+.big-reservation-title {
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+#bottom-illustration-text {
+  text-align: center;
+  color: grey;
+  padding: 12px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  font-style: normal;
+}
+#reservation-button {
+  width: 100px;
+  border: 3px solid var(--color-primary);
+  margin: 12px auto;
+  padding: 4px;
+  color: var(--color-primary);
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  background-color: black;
+}
+#reservation-button:hover {
+  background-color: var(--color-primary);
+  color: black;
+  transition: 0.5s;
+}
+
+/* Reviews section */
+#reviews-title {
+  position: relative;
+  top: 54px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 2em;
+  padding: 12px;
+  line-height: 22px;
+}
+#reviews-title::before {
+  content: "“";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: -8px;
+  left: 50%;
+  font-size: 58px;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/*Carousel*/
+.carousel {
+  position: relative;
+  text-align: center;
+  margin-top: 54px;
+  margin-bottom: 20px;
+}
+.carousel-pictures {
+  display: flex;
+  overflow: hidden;
+}
+.carousel-picture,
+.carousel-main-picture {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+.carousel-dot.active {
+  background: var(--color-primary);
+  transform: scale(1.5);
+}
+
+/* Footer */
+footer {
+  background-image: url("../imgs/Backgrounds/backgroundHeader.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  font-family: "Calibri", sans-serif;
+  font-size: 1.3em;
+}
+.footer-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-box {
+  margin: 10px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgba(8, 14, 15, 0.7);
+  padding: 30px;
+}
+.footer-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+.footer-phone-number {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--color-primary);
+}
+.footer-logo {
+  width: 150px;
+  height: 150px;
+}
+.footer-copyright {
+  font-size: 0.8em;
+  opacity: 0.5;
+  p {
+    margin: 0;
+  }
+}
+
+/* Reservation page */
+.yellow-text {
+  color: var(--color-primary);
+}
+.ntr-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+.title-smaller {
+  font-size: 0.8em;
+}
+.title-normal {
+  font-size: 1em;
+}
+.reservation-form-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 16px;
+  form {
+    width: 90%;
+    border: 5px solid var(--color-secondary);
+    padding: 30px;
+    margin-bottom: 20px;
+    label {
+      font-family: 'Bevietnam';
+    }
+    input, textarea {
+      width: 100%;
+      margin: 12px auto;
+      padding: 4px;
+      font-family: 'Bevietnam';
+    }
+  }
+}
+#form-reservation-button-final {
+  width: 100%;
+  border: 3px solid var(--color-primary);
+  margin: 12px auto;
+  padding: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+#form-reservation-button-final:hover {
+  background-color: white;
+  color: var(--color-primary);
+  transition: 0.5s;
+}
+
+/* LOGIN PAGE */
+
+#login-form {
+  background-color: rgb(217, 217, 217);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+#input-email-admin {
+  background-color: rgb(164, 164, 164);
+  border-radius: 3px;  
+}
+
+#input-password-admin {
+  background-color: rgb(164, 164, 164);
+  border-radius: 3px;
+}
+
+#button-connect-admin {
+  background-color: #e1e138;
+  border: #e1e138;
+  color: black;
+  }

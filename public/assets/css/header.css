@@ -1,0 +1,10 @@
+.backgroundHeader{
+    background-image: url('../imgs/Backgrounds/backgroundHeader.png');
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
