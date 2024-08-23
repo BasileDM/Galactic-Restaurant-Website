@@ -1,5 +1,13 @@
 <?php
 include_once __DIR__ . '/Includes/header.php';
+
+var_dump($_SESSION);
+
+$userRole = $_SESSION['utilisateur']['role'] ?? '';
+
+echo "<script>console.log('User Role: " . $userRole . "');</script>";
+
+var_dump($userRole)
 ?>
 <script defer src="assets/js/scriptAdmin.js"></script>
 
@@ -10,9 +18,12 @@ include_once __DIR__ . '/Includes/header.php';
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Les menus</button>
             </li>
+
+            <?php if ($userRole === '["ROLE_ADMIN"]'): ?>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Les reservations</button>
             </li>
+            <?php endif; ?>
 
         </ul>
 
@@ -174,9 +185,10 @@ include_once __DIR__ . '/Includes/header.php';
             </div>
         </div>
     </div>
-
+    
 
     <h3>Les réservations</h3>
+
     <table class="table">
         <thead>
             <tr>

@@ -1,5 +1,5 @@
 <?php 
-//  echo password_verify("admin", "$2y$10$QdO5JWhZIyJqzht8qNbrj.zNzCxluu4z.d4FrxZlYp/v0Bpce0L1C");
+//  echo password_hash('', PASSWORD_DEFAULT);
     
 include_once __DIR__ . '/Includes/header.php';
 ?>
