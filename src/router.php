@@ -63,7 +63,7 @@ switch ($route)
     }
     else if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
-      $resaController->processReservation($_POST['date']);
+      $resaController->processReservation();
     }
     break;
 

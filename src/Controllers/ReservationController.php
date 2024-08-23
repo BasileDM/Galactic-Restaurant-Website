@@ -10,7 +10,7 @@ use src\Services\Reponse;
 class ReservationController
 {
   use Reponse;
-  public function processReservation($selectedDate)
+  public function processReservation()
   {
     $name = htmlspecialchars(trim($_POST['nom']));
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
