@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error("Network response error.");
       }
       const data = await response.json();
-      console.log(data);
       updateAvailabilityDisplay(data);
     } catch (error) {
       console.error("Fetch error:", error);
@@ -21,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const availableSpotsElement = document.getElementById("available-seats");
     availableSpotsElement.textContent = `Places restantes: ${data}`;
   }
+
+  let datePicker = document.getElementById("date");
+  datePicker.addEventListener("change", checkAvailability);
 
   checkAvailability();
 });
