@@ -44,7 +44,8 @@ class ReservationRepository
     return $demandes;
   }
 
-  public function getTodaysReservations($selectedDate) {
+  public function getTodaysReservations($selectedDate)
+  {
 
     $sql = "SELECT * FROM rest_reservation WHERE resaDate = :selectedDate;";
     $query = $this->DB->prepare($sql);
@@ -53,5 +54,14 @@ class ReservationRepository
     ]);
     $demandes = $query->fetchAll(PDO::FETCH_ASSOC);
     return $demandes;
+  }
+
+  public function delete($id)
+  {
+    $sql = "DELETE FROM rest_reservation WHERE id_resa = :id;";
+    $query = $this->DB->prepare($sql);
+    $query->execute([
+      ':id' => $id
+    ]);
   }
 }

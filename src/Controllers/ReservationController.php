@@ -2,15 +2,15 @@
 
 namespace src\controllers;
 
-use src\Services\SeatsManagement;
 use src\Models\Reservation;
 use src\Repositories\ReservationRepository;
+use src\Services\HelperService;
 use src\Services\Reponse;
 
 class ReservationController
 {
   use Reponse;
-  public function processReservation($selectedDate)
+  public function processReservation()
   {
     $name = htmlspecialchars(trim($_POST['nom']));
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
@@ -48,7 +48,8 @@ class ReservationController
       return;
     }
 
-    if ($number % 2 != 0) {
+    if ($number % 2 != 0)
+    {
       $number += 1;
     }
 
@@ -77,6 +78,22 @@ class ReservationController
       {
         $reservation->setId($newID);
         $_POST['nom'] = $_POST['email'] = $_POST['date'] = $_POST['time'] = $_POST['number'] = null;
+
+        $helperService = new HelperService();
+        $sentMail = $helperService->sendMail(
+          $reservation->getName(),
+          $reservation->getMail(),
+          $reservation->getDate(),
+          $reservation->getTime(),
+          $reservation->getNumberOfGuests()
+        );
+
+        if (!$sentMail)
+        {
+          $this->render('reservationForm', ['error' => 'Une erreur est survenue lors de l\'envoi du mail...']);
+          return;
+        }
+
         $this->render('reservationForm', [
           'reservation' => $reservation,
           'success' => 'Votre réservation a bien été enregistrée ! Vérifiez votre boite mail.'
@@ -91,8 +108,24 @@ class ReservationController
 
   public function getAvailableSeats($selectedDate)
   {
-    $seatsManagement = new SeatsManagement();
-    $availableSeats = $seatsManagement->calculateAvailableSeats($selectedDate);
+    $helperService = new HelperService();
+    $availableSeats = $helperService->calculateAvailableSeats($selectedDate);
     return $availableSeats;
+  }
+
+  public function cancelReservation()
+  {
+    $mailHash = base64_decode($_GET['id']);
+    $reservationRepository = new ReservationRepository();
+    $allReservations = $reservationRepository->getAllReservation();
+
+    foreach ($allReservations as $reservation)
+    {
+      if (password_verify($reservation['mail'], $mailHash))
+      {
+        $reservationRepository->delete($reservation['id_resa']);
+        $this->render('reservationForm', ['success' => 'Votre réservation a bien été annulée !']);
+      }
+    }
   }
 }
