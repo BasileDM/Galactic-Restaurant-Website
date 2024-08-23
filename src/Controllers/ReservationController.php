@@ -2,9 +2,9 @@
 
 namespace src\controllers;
 
-use src\Services\SeatsManagement;
 use src\Models\Reservation;
 use src\Repositories\ReservationRepository;
+use src\Services\HelperService;
 use src\Services\Reponse;
 
 class ReservationController
@@ -78,6 +78,16 @@ class ReservationController
       {
         $reservation->setId($newID);
         $_POST['nom'] = $_POST['email'] = $_POST['date'] = $_POST['time'] = $_POST['number'] = null;
+
+        $helperService = new HelperService();
+        $helperService->sendMail(
+          $reservation->getName(), 
+          $reservation->getMail(), 
+          $reservation->getDate(), 
+          $reservation->getTime(), 
+          $reservation->getNumberOfGuests()
+        );
+
         $this->render('reservationForm', [
           'reservation' => $reservation,
           'success' => 'Votre réservation a bien été enregistrée ! Vérifiez votre boite mail.'
@@ -92,8 +102,8 @@ class ReservationController
 
   public function getAvailableSeats($selectedDate)
   {
-    $seatsManagement = new SeatsManagement();
-    $availableSeats = $seatsManagement->calculateAvailableSeats($selectedDate);
+    $helperService = new HelperService();
+    $availableSeats = $helperService->calculateAvailableSeats($selectedDate);
     return $availableSeats;
   }
 }
