@@ -584,6 +584,11 @@ footer p {
     display: flex;
     flex-direction: row;
   }
+
+  /*Reservation*/
+  .reservation-form-contact-container>form{
+    max-width: 80%;
+  }
 }
 
 /* Desktop */
@@ -628,6 +633,21 @@ footer p {
     width: 100%;
     div, p {
       width: 80%;
+    }
+  }
+
+  /* Reservation page */
+  .reservation-form-contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    form {
+      width: 50%;
+    }
+    .contact-container {
+      width: 50%;
+      padding: 0 40px;
     }
   }
 
