@@ -38,13 +38,13 @@ final class Database
     {
         if ($this->DBexiste())
         {
-            return "La base de donnees exite";
+            return;
             die();
         }
 
         try
         {
-            $sql = file_get_contents(__DIR__ . "../Migrations/chariotte.sql");
+            $sql = file_get_contents(__DIR__ . "/../Migrations/galacticRestaurant.sql");
             $this->DB->query($sql);
 
 
@@ -62,8 +62,8 @@ final class Database
     function DBexiste()
     {
 
-        $existe = $this->DB->query('SHOW TABLES FROM ' . DB_NAME . ' LIKE \'char_client\'')->fetch();
-        if ($existe !== false && $existe[0] == "char_client")
+        $existe = $this->DB->query('SHOW TABLES FROM ' . DB_NAME . ' LIKE \'rest_cook\'')->fetch();
+        if ($existe && $existe[0] == "rest_cook")
         {
             return true;
         }
