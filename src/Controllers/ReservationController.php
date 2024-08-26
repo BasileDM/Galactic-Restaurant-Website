@@ -10,6 +10,14 @@ use src\Services\Reponse;
 class ReservationController
 {
   use Reponse;
+
+  public function viewRGPD()
+  {
+    $this->render('RGPD');
+
+  }
+
+
   public function processReservation()
   {
     $name = htmlspecialchars(trim($_POST['nom']));
