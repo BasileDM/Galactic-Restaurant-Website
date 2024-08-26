@@ -1,13 +1,8 @@
 <?php
 include_once __DIR__ . '/Includes/header.php';
 
-var_dump($_SESSION);
-
 $userRole = $_SESSION['utilisateur']['role'] ?? '';
 
-echo "<script>console.log('User Role: " . $userRole . "');</script>";
-
-var_dump($userRole)
 ?>
 <script defer src="assets/js/scriptAdmin.js"></script>
 

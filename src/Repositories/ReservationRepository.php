@@ -55,4 +55,3 @@ class ReservationRepository
     return $demandes;
   }
 }
-}
