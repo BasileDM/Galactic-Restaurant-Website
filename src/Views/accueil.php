@@ -14,16 +14,18 @@
             "Rencontrez le chef Poulpe : un expert en gastronomie spatiale dont les tentacules agiles sont aussi talentueux pour mélanger les saveurs que pour attraper les étoiles filantes.<br><br>
             À L'Étoile Dorée, il prépare des plats qui font voyager vos papilles tout en restant gravitationnellement délicieux !"
         </p>
-        <div class="primary-title-back-stroke">- L'ETOILE DOREE -</div>
-        <div class="big-reservation-title">Réserver une table</div>
-        <p id="bottom-illustration-text">
-            Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor enim dui lectus id.
-            Tristique dignissim pharetra feugiat mattis non. Vivamus libero feugiat odio eget potenti.
-        </p>
-        <div id="reservation-button" onclick="location.href='reservation'">Réserver</div>
+        <section class="illustration-section-booking">
+            <div class="primary-title-back-stroke">- L'ETOILE DOREE -</div>
+            <div class="big-reservation-title">Réserver une table</div>
+            <p id="bottom-illustration-text">
+                Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor enim dui lectus id.
+                Tristique dignissim pharetra feugiat mattis non. Vivamus libero feugiat odio eget potenti.
+            </p>
+            <div id="reservation-button" onclick="location.href='reservation'">Réserver</div>
+        </section>
     </section>
     <section>
-        <h2 id="reviews-title">Ce que nos clients disent</h2>
+        <h2 id="reviews-title">Ce qu'en pensent nos clients</h2>
         <div class="carousel">
             <script src="assets/js/carousel.js"></script>
             <div class="carousel-pictures">
