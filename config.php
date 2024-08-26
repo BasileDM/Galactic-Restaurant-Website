@@ -11,4 +11,4 @@ define('HOME_URL', '/');
 define('FULL_URL', 'http://your-url-here/'); // For mails
 
 // Ne pas toucher :
-define('DB_INITIALIZED', TRUE);
+define('DB_INITIALIZED', FALSE);
