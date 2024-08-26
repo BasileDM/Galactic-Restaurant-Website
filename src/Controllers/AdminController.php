@@ -25,15 +25,15 @@ class AdminController
             $mdp = $_POST['password'];
     
             $adminRepository = new AdminRepository(); 
-    
-            // Verify the user with the correct logic inside the repository
+
             $admin = $adminRepository->verifyUser($username, $mdp);
     
             if($admin) {
-                // session_start();
+                session_start();
     
                 $_SESSION['connecte'] = true;
                 $_SESSION['utilisateur'] = $admin;
+                
                 
                 
                 header('location:' . HOME_URL . 'admin');
@@ -43,8 +43,15 @@ class AdminController
                 die();
             }
         }
-    }
+    } 
+
+    public function logout() {
     
+        session_destroy();
+        
+        header("Location: " . HOME_URL . "login");
+        exit();
+    }
 
     public function affichePageAdmin()
     {

@@ -47,6 +47,10 @@ switch ($route)
     $adminController->affichePageAdmin();
     break;
 
+    case HOME_URL . 'logout':
+      $adminController->logout();
+      break;
+
   case HOME_URL . 'ajoutPlat':
     $adminController->affichePageCreationPlats();
     break;
