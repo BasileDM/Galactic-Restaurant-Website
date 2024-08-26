@@ -17,6 +17,7 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
 <script>
     const HOME_URL = "<?= HOME_URL ?>";
 </script>
+<script defer src="assets/js/script.js"></script>
 
 <body>
     <header>
@@ -27,11 +28,11 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
             <div>
                 <h1 class="titrePrincipal"> L'etoile Doree </h1>
                 <nav class="backgroundNav">
-                    <a class="navLink" href=<?php echo HOME_URL; ?>>Accueil</a>
-                    <a class="navLink" href=<?php echo HOME_URL . 'menu'; ?>> Menu</a>
-                    <a class="navLink" href=<?php echo HOME_URL . 'reservation'; ?>> Réserver</a>
-                    <a class="navLink" href=<?php echo HOME_URL . 'aPropos'; ?>> A propos</a>
-                    <a class="navLink" href=<?php echo HOME_URL . 'contact'; ?>> Contact</a>
+                    <a class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>" href=<?php echo HOME_URL; ?>>Accueil</a>
+                    <a class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'menu'; ?>> Menu</a>
+                    <a class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'reservation'; ?>> Réserver</a>
+                    <a class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'aPropos'; ?>> A propos</a>
+                    <a id="contact" class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>"> Contact</a>
                     <a class="navLink" id="deconnexion-btn" href=<?php echo HOME_URL . 'logout'; ?>>Déconnexion</a>
                 </nav>
             </div>
