@@ -27,7 +27,15 @@ include_once __DIR__ . '/Includes/header.php';
       <label for="number">Nombre de convives*</label>
       <div><span id="available-seats"></span></div>
       <input type="number" id="number" name="number" value="<?php echo isset($_POST['number']) ? htmlspecialchars($_POST['number']) : ''; ?>">
+      
+      <div id="terms-conds">
+          <label for="checkbox">I agree</label>  
+          <input type="checkbox" id="checkbox-RGPD"/>
+      </div>
+            <a href=<?php echo HOME_URL . "RGPD"; ?>>Terms and conditions</a>
+
     </div>
+
     <button type="submit" id="form-reservation-button-final" disabled>Réserver</button>
 
     <?php if (isset($error)) : ?>

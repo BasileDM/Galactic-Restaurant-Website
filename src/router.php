@@ -71,6 +71,10 @@ switch ($route)
     }
     break;
 
+    case HOME_URL . 'RGPD':
+      $resaController->viewRGPD();
+      break;
+
   case HOME_URL . 'supprimerDish':
     $dishController->supprimerDish();
     break;
