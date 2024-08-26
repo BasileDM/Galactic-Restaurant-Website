@@ -23,18 +23,41 @@ switch ($route)
     $homeController->affichePageMenu();
     break;
 
-    // APRES AUTHENTIFICATION 
-  case HOME_URL . 'pageAccueilAdmin':
-    $adminController->affichePageAdmin();
-    break;
-
     //AUTHENTICATION PAGE
   case HOME_URL . 'login':
-    $adminController->afficheLogin();
+    if ($_SESSION && $_SESSION['connecte'] && $_SESSION['connecte'] === true)
+    {
+      header('location: ' . HOME_URL . 'admin');
+      exit;
+    }
+    else
+    {
+      $adminController->afficheLogin();
+    }
+    break;
+
+  case HOME_URL . 'admin':
+    if ($_SESSION && $_SESSION['connecte'] && $_SESSION['connecte'] === true)
+    {
+      $adminController->affichePageAdmin();
+    }
+    else 
+    {
+      header('location: ' . HOME_URL . 'login');
+      exit;
+    }
     break;
 
   case HOME_URL . 'traitementLogin':
-    $adminController->traiterLogin();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+      $adminController->traiterLogin();
+    }
+    else
+    {
+      header('location: ' . HOME_URL . 'login');
+      exit;
+    }
     break;
 
 
@@ -42,20 +65,19 @@ switch ($route)
     $homeController->affichePagePropos();
     break;
 
-    // APRES AUTHENTIFICATION 
-  case HOME_URL . 'admin':
-    $adminController->affichePageAdmin();
+  case HOME_URL . 'logout':
+    $adminController->logout();
     break;
-
-    case HOME_URL . 'logout':
-      $adminController->logout();
-      break;
 
   case HOME_URL . 'ajoutPlat':
     $adminController->affichePageCreationPlats();
     break;
 
   case HOME_URL . 'traiterFormulaireDish':
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+      header('location: ' . HOME_URL . 'menu');
+      exit;
+    }
     $dishController->traiterFormulaireDish();
     break;
 

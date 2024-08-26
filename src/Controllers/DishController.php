@@ -11,6 +11,12 @@ class DishController
     use Reponse;
     public function traiterFormulaireDish(){
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            
+            if (empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['type'])) {
+                $this->render('formulaireCreationPlats', ['success' => false, 'message' => 'Veuillez renseigner tous les champs.']);
+                return;
+            }
+
             $isAvailable = 0;
             $isRobot=0;
             if (isset($_POST['isAvailable'])) {
@@ -20,6 +26,7 @@ class DishController
             if (isset($_POST['isRobot'])) {
                 $isAvailable = 1;
             }
+            
 
             if (
                 isset($_POST['name'])
@@ -40,8 +47,6 @@ class DishController
                 $dishRepo->ajouterPlats($dish);
 
                 header('Location: ' . HOME_URL . 'admin');
-
-
             }
         }
     }
