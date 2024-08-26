@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,26 +32,12 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
                     <a class="navLink" href=<?php echo HOME_URL . 'reservation'; ?>> Réserver</a>
                     <a class="navLink" href=<?php echo HOME_URL . 'aPropos'; ?>> A propos</a>
                     <a class="navLink" href=<?php echo HOME_URL . 'contact'; ?>> Contact</a>
-                    <a class="navLink" id="deconnexion-btn" href= <?php echo HOME_URL . 'logout'; ?>>Déconnexion</a>
+                    <a class="navLink" id="deconnexion-btn" href=<?php echo HOME_URL . 'logout'; ?>>Déconnexion</a>
                 </nav>
             </div>
-<header>
-    <div class="backgroundHeader">
-        <div class="containerImage">
-            <img class="LogoHeader" src="assets/imgs/Logo.png" alt="logo du restaurant galactic">
-        </div>
-        <div>
-            <h1 class="titrePrincipal"> L'etoile Doree </h1>
-            <nav class="backgroundNav">
-                <a class="navLink <?php echo $current_page == '' || $current_page == 'index' ? 'active' : ''; ?>" href="<?php echo HOME_URL; ?>">Accueil</a>
-                <a class="navLink <?php echo $current_page == 'menu' ? 'active' : ''; ?>" href="<?php echo HOME_URL . 'menu'; ?>"> Menu</a>
-                <a class="navLink <?php echo $current_page == 'reservation' ? 'active' : ''; ?>" href="<?php echo HOME_URL . 'reservation'; ?>"> Réserver</a>
-                <a class="navLink <?php echo $current_page == 'aPropos' ? 'active' : ''; ?>" href="<?php echo HOME_URL . 'aPropos'; ?>"> A propos</a>
-                <a id="contact" class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>"> Contact</a>
-            </nav>
         </div>
     </header>
-    
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -62,12 +46,11 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
 
             <?php if (isset($_SESSION['connecte']) && $_SESSION['connecte'] === true): ?>
                 document.getElementById('deconnexion-btn').style.display = 'inline-block';
-              
+
             <?php endif; ?>
         });
 
-            document.getElementById('deconnexion-btn').style.display = 'none';
-
+        document.getElementById('deconnexion-btn').style.display = 'none';
     </script>
 </body>
 
