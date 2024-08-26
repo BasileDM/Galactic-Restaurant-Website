@@ -110,7 +110,7 @@ nav {
   color: white;
 }
 
-.navLink:hover {
+.navLink:hover, .navLink.active {
   cursor: pointer;
   color: var(--color-primary);
 }
@@ -255,84 +255,6 @@ nav {
 .containerProposCreativity{
   display: flex;
   flex-direction: column;
-}
-
-@media only screen and (min-width: 480px) {
-  .backgroundHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .titrePrincipal{
-    font-size: 55px;
-    padding: 56px;
-  }
-
-  .containerImage {
-    padding: 28px;
-    width: 12%;
-  }
-
-  .LogoHeader{
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 70px;
-  }
-
-  nav {
-    position: relative;
-  }
-
-  .backgroundNav {
-    background-image: none;
-    font-size: 24px;
-  }
-
-  .containerMenu{
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .tailleContainerMenu{
-    width: 50%;
-  }
-
-  .imagePlatBulle{
-    width: 300px;
-    height: 300px;
-  }
-
-  .inverse{
-    flex-direction: row-reverse;
-  }
-
-  /* PROPOS */
-
-  .containerProposCreativity{
-    flex-direction: row;
-  }
-
-  .boxImagePropos{
-    width: 50%;
-  }
-
-  .boxtextPropos{
-    align-content: center;
-    font-size: 0.8em;
-  }
-
-  .containerEvent{
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .grandContainerCuistots{
-    display: flex;
-    flex-direction: row;
-  }
-
 }
 
 /* Homepage */
@@ -589,3 +511,158 @@ footer p {
   border: #e1e138;
   color: black;
   }
+
+/* Media queries */
+/* Tablet */
+@media only screen and (min-width: 553px) {
+  .backgroundHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .titrePrincipal{
+    font-size: 55px;
+    padding: 56px;
+  }
+
+  .containerImage {
+    padding: 28px;
+    width: 12%;
+  }
+
+  .LogoHeader{
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .backgroundNav {
+    background-image: none;
+    font-size: 24px;
+  }
+
+  .containerMenu{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .tailleContainerMenu{
+    width: 50%;
+  }
+
+  .imagePlatBulle{
+    width: 300px;
+    height: 300px;
+  }
+
+  .inverse{
+    flex-direction: row-reverse;
+  }
+
+  /* PROPOS */
+
+  .containerProposCreativity{
+    flex-direction: row;
+  }
+
+  .boxImagePropos{
+    width: 50%;
+  }
+
+  .boxtextPropos{
+    align-content: center;
+    font-size: 0.8em;
+  }
+
+  .containerEvent{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .grandContainerCuistots{
+    display: flex;
+    flex-direction: row;
+  }
+
+  /*Reservation*/
+  .reservation-form-contact-container>form{
+    max-width: 80%;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 872px) {
+  /* Homepage */
+  .illustration-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .illustration-section:nth-of-type(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0;
+    padding: 0
+  }
+  .illustration-section:nth-of-type(odd) {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+  }
+
+  .illustration-section > div:nth-child(1),
+  .illustration-section > div:nth-child(2) {
+    width: 50%;
+  }
+
+  .illustration-section > div:nth-child(3) {
+    width: 100%;
+  }
+  .illustration {
+    width: 50%;
+  }
+  .illustration-section p {
+    width: 50%;
+  }
+  .illustration-section-booking {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    div, p {
+      width: 80%;
+    }
+  }
+
+  /* Reservation page */
+  .reservation-form-contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    form {
+      width: 50%;
+    }
+    .contact-container {
+      width: 50%;
+      padding: 0 40px;
+    }
+  }
+
+  /* Footer */
+  .footer-boxes-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-boxes-container > div {
+    flex: 1;
+  }
+}

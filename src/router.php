@@ -67,7 +67,7 @@ switch ($route)
     }
     else if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
-      $resaController->processReservation($_POST['date']);
+      $resaController->processReservation();
     }
     break;
 
@@ -81,6 +81,11 @@ switch ($route)
       $seats = $resaController->getAvailableSeats($_GET['date']);
       echo json_encode($seats);
     }
+    break;
+
+  case HOME_URL . 'cancel':
+    $resaController->cancelReservation();
+    $homeController->render("reservationForm", ['success' => 'Votre réservation a bien été annulée !']);
     break;
 
   default:

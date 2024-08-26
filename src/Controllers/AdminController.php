@@ -57,9 +57,9 @@ class AdminController
     {
         $dishRepo = new DishRepository();
         $reservationRepo = new ReservationRepository();
-        $entrees = $dishRepo->recupererEntrees();
-        $plats = $dishRepo->recupererPlats();
-        $desserts = $dishRepo->recupererDesserts();
+        $entrees = $dishRepo->recupererToutesLesEntrees();
+        $plats = $dishRepo->recupererTousLesPlats();
+        $desserts = $dishRepo->recupererTousLesDesserts();
         $reservations = $reservationRepo->getAllReservation();
         $this->render("accueilAdmin", ['entrees' => $entrees, 'plats' => $plats, 'desserts' => $desserts, 'reservations' => $reservations]);
         exit;
