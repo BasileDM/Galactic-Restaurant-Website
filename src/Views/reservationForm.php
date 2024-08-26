@@ -35,7 +35,7 @@ include_once __DIR__ . '/Includes/header.php';
     <?php endif; ?>
 
   </form>
-  <section>
+  <section class="contact-container">
     <span class="yellow-text ntr-title">L'Étoile dorée</span>
     <h2 class="ntr-title">La destination ultime pour une cuisine de qualité.</h2>
     <p>Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. </p>
