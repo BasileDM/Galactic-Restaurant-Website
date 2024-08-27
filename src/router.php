@@ -71,14 +71,21 @@ switch ($route)
     break;
 
   case HOME_URL . 'ajoutPlat':
-    if (isset($_GET['id']))
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
     {
-      $id = htmlspecialchars($_GET['id']);
-      $adminController->affichePageCreationPlats($id);
+      if (isset($_GET['id']))
+      {
+        $id = htmlspecialchars($_GET['id']);
+        $adminController->affichePageCreationPlats($id);
+      }
+      else
+      {
+        $adminController->affichePageCreationPlats();
+      }
     }
     else
     {
-      $adminController->affichePageCreationPlats();
+      $homeController->affichePage404();
     }
     break;
 
@@ -108,8 +115,14 @@ switch ($route)
     break;
 
   case HOME_URL . 'supprimerDish':
-    $dishController->supprimerDish();
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte']){
+         $dishController->supprimerDish();
     break;
+    } else {
+      $homeController->affichePage404();
+      break;
+    }
+ 
 
   case HOME_URL . 'getSeatsAvailability':
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['date']))
