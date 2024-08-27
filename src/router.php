@@ -43,7 +43,7 @@ switch ($route)
     {
       $adminController->affichePageAdmin();
     }
-    else 
+    else
     {
       header('location: ' . HOME_URL . 'login');
       exit;
@@ -72,17 +72,30 @@ switch ($route)
     break;
 
   case HOME_URL . 'ajoutPlat':
-    if(isset($_GET['id'])){
-      $id = htmlspecialchars($_GET['id']);
-      $adminController->affichePageCreationPlats($id);
-    } else {
-      $adminController->affichePageCreationPlats();
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
+    {
+
+      if (isset($_GET['id']))
+      {
+        $id = htmlspecialchars($_GET['id']);
+        $adminController->affichePageCreationPlats($id);
+      }
+      else
+      {
+        $adminController->affichePageCreationPlats();
+      }
+      break;
     }
-    break;
-  
+    else
+    {
+      $homeController->affichePage404();
+      break;
+    }
+
 
   case HOME_URL . 'traiterFormulaireDish':
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET')
+    {
       header('location: ' . HOME_URL . 'menu');
       exit;
     }
@@ -101,13 +114,19 @@ switch ($route)
     }
     break;
 
-    case HOME_URL . 'RGPD':
-      $resaController->viewRGPD();
-      break;
+  case HOME_URL . 'RGPD':
+    $resaController->viewRGPD();
+    break;
 
   case HOME_URL . 'supprimerDish':
-    $dishController->supprimerDish();
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte']){
+         $dishController->supprimerDish();
     break;
+    } else {
+      $homeController->affichePage404();
+      break;
+    }
+ 
 
   case HOME_URL . 'getSeatsAvailability':
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['date']))
