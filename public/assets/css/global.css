@@ -226,6 +226,7 @@ nav {
 
 .titreEvent{
   font-size: 2.3em;
+  padding: 3% ;
 }
 
 .imageCuistot{
@@ -607,10 +608,19 @@ footer p {
   .reservation-form-contact-container>form{
     max-width: 80%;
   }
+
 }
 
 /* Desktop */
 @media only screen and (min-width: 872px) {
+
+/* A PROPOS */
+  .divEvent{
+    width: 70%;
+    margin: 24px;
+  }
+
+
   /* Homepage */
   .illustration-section {
     display: flex;
