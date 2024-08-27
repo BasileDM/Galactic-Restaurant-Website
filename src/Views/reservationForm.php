@@ -3,11 +3,11 @@ include_once __DIR__ . '/Includes/header.php';
 ?>
 
 <script src="./assets/js/seatsAvailability.js"></script>
+<?php if (isset($success))
+{
+  echo '<p style="color:green; text-align:center; font-weight:bold; margin-top:25px">' . $success . '</p>';
+} ?>
 <div class="reservation-form-contact-container">
-  <?php if (isset($success))
-  {
-    echo '<p style="color:green; text-align:center; font-weight:bold">' . $success . '</p>';
-  } ?>
   <form action="<?php echo HOME_URL; ?>reservation" method="post">
     <span class="yellow-text ntr-title">Réservation</span>
     <h2 class="ntr-title">Réserver une table</h2>
@@ -25,14 +25,17 @@ include_once __DIR__ . '/Includes/header.php';
       <input type="time" id="time" name="time" value="<?php echo isset($_POST['time']) ? htmlspecialchars($_POST['time']) : ''; ?>">
 
       <label for="number">Nombre de convives*</label>
-      <div><span id="available-seats"></span></div>
-      <input type="number" id="number" name="number" value="<?php echo isset($_POST['number']) ? htmlspecialchars($_POST['number']) : ''; ?>">
-      
-      <div id="terms-conds">
-          <label for="checkbox">I agree</label>  
-          <input type="checkbox" id="checkbox-RGPD" name="terms-conds"/>
+      <div>
+        <span id="available-seats"></span>
       </div>
-            <a href=<?php echo HOME_URL . "RGPD"; ?>>Terms and conditions</a>
+      <input type="number" id="number" name="number" value="<?php echo isset($_POST['number']) ? htmlspecialchars($_POST['number']) : ''; ?>">
+
+      <div id="terms-conds">
+        <label for="checkbox">I agree</label>
+        <input type="checkbox" id="checkbox-RGPD" name="terms-conds" />
+      </div>
+
+      <a href=<?php echo HOME_URL . "RGPD"; ?>>Terms and conditions</a>
 
     </div>
 

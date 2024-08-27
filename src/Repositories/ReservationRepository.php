@@ -3,6 +3,7 @@
 namespace src\Repositories;
 
 use PDO;
+use PDOException;
 use src\Models\Database;
 use src\Models\Reservation;
 
@@ -63,5 +64,23 @@ class ReservationRepository
     $query->execute([
       ':id' => $id
     ]);
+  }
+
+  public function validateReservation($id)
+  {
+    try
+    {
+      $sql = "UPDATE rest_reservation SET isValide = 1 WHERE id_resa = :id;";
+      $query = $this->DB->prepare($sql);
+      $query->execute([
+        ':id' => $id
+      ]);
+
+      return true;
+    }
+    catch (PDOException $e)
+    {
+      echo $e->getMessage();
+    }
   }
 }

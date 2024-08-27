@@ -2,7 +2,6 @@
 
 namespace src\Repositories;
 
-use PDO;
 use src\Models\Database;
 
 class LogRepository
