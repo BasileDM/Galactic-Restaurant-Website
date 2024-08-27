@@ -13,7 +13,7 @@ fetchReviews().then((reviews) => {
   const carouselDots = document.querySelector(".carousel-dots");
 
   reviews.forEach((review, index) => {
-    // Picture element
+    // Pictures
     const pictureDiv = document.createElement("div");
     pictureDiv.className = index === 0 ? "carousel-main-picture" : "carousel-picture";
     pictureDiv.dataset.index = index;
@@ -26,16 +26,18 @@ fetchReviews().then((reviews) => {
     pictureDiv.appendChild(img);
     carouselPictures.appendChild(pictureDiv);
 
-    // Review text element
+    // Reviews
     const reviewText = document.createElement("p");
     reviewText.className = "carousel-review-text";
     reviewText.dataset.index = index;
     reviewText.textContent = `"${review.comments}"`;
     reviewText.style.display = index === 0 ? "block" : "none";
     carouselReviews.appendChild(reviewText);
-    review.fullName == "X-22- 7Z20" ? reviewText.style.fontFamily = "Glipervelz" : reviewText.style.fontFamily = "Electrolize";
+    review.fullName == "X-22- 7Z20" ? 
+    reviewText.style.fontFamily = "Glipervelz" : 
+    reviewText.style.fontFamily = "Electrolize";
 
-    // Author name element
+    // Author name
     const reviewAuthor = document.createElement("p");
     reviewAuthor.className = "carousel-review-author";
     reviewAuthor.dataset.index = index;
@@ -43,7 +45,7 @@ fetchReviews().then((reviews) => {
     reviewAuthor.style.display = index === 0 ? "block" : "none";
     carouselReviews.appendChild(reviewAuthor);
 
-    // Role/Subtitle element
+    // Role
     const reviewSubtitle = document.createElement("p");
     reviewSubtitle.className = "carousel-review-subtitle";
     reviewSubtitle.dataset.index = index;
@@ -51,7 +53,7 @@ fetchReviews().then((reviews) => {
     reviewSubtitle.style.display = index === 0 ? "block" : "none";
     carouselReviews.appendChild(reviewSubtitle);
 
-    // Dot element
+    // Dots
     const dot = document.createElement("span");
     dot.className = index === 0 ? "carousel-dot active" : "carousel-dot";
     dot.dataset.index = index;
