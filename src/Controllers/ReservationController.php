@@ -14,9 +14,7 @@ class ReservationController
   public function viewRGPD()
   {
     $this->render('RGPD');
-
   }
-
 
   public function processReservation()
   {
@@ -53,7 +51,7 @@ class ReservationController
 
     if ($number <= 0 || $number > 20 || !filter_var($number, FILTER_VALIDATE_INT))
     {
-      $this->render('reservationForm', ['error' => 'Number of guests must be between 1 and 20.']);
+      $this->render('reservationForm', ['error' => 'Le nombre de convives doit être compris entre 1 et 20.']);
       return;
     }
 
@@ -68,9 +66,10 @@ class ReservationController
       return;
     }
 
-    if (!$terms) {
+    if (!$terms)
+    {
       $this->render('reservationForm', ['error' => 'Accepter les termes et conditions avant de continuer']);
-  }
+    }
 
     else
     {

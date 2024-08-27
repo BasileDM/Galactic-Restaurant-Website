@@ -29,9 +29,9 @@ class AdminController
             $admin = $adminRepository->verifyUser($username, $mdp);
     
             if($admin) 
-            {                
+            {
                 $_SESSION['connecte'] = true;
-                $_SESSION['utilisateur'] = $admin;
+                $_SESSION['role'] = $admin['role'];
                 $_SESSION['id'] = $admin['id_Admin'];
 
                 header('location:' . HOME_URL . 'admin');
@@ -46,7 +46,6 @@ class AdminController
     } 
 
     public function logout() {
-    
         session_destroy();
         
         header("Location: " . HOME_URL . "login");
@@ -76,7 +75,4 @@ class AdminController
         $this->render("formulaireCreationPlats");
         exit;
     }
-
-
 }
-
