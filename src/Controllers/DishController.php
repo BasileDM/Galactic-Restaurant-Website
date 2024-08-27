@@ -40,9 +40,9 @@ class DishController
                 $price = htmlspecialchars($_POST['price']);
                 $description = htmlspecialchars($_POST['description']);
 
-                if (empty($title) || strlen($title) > 30 || strlen($title) < 5)
+                if (empty($title) || strlen($title) > 50 || strlen($title) < 5)
                 {
-                    $this->render('formulaireCreationPlats', ['errorDish' => 'Le nom doit avoir entre 6 et 30 caractères.']);
+                    $this->render('formulaireCreationPlats', ['errorDish' => 'Le nom doit avoir entre 6 et 50 caractères.']);
                     return;
                 }
 
