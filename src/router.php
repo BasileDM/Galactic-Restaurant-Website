@@ -70,8 +70,14 @@ switch ($route)
     break;
 
   case HOME_URL . 'ajoutPlat':
-    $adminController->affichePageCreationPlats();
+    if(isset($_GET['id'])){
+      $id = htmlspecialchars($_GET['id']);
+      $adminController->affichePageCreationPlats($id);
+    } else {
+      $adminController->affichePageCreationPlats();
+    }
     break;
+  
 
   case HOME_URL . 'traiterFormulaireDish':
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {

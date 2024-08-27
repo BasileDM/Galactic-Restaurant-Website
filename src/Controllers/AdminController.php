@@ -65,11 +65,18 @@ class AdminController
         exit;
     }
 
-    public function affichePageCreationPlats()
+    public function affichePageCreationPlats($id=0)
     {
+        if($id !=0){
+            $dishRepo = new DishRepository;
+            $dish = $dishRepo->getDishById($id);
+            $this->render("formulaireCreationPlats", ['dish' => $dish]);
+            exit;
+        }
         $this->render("formulaireCreationPlats");
         exit;
     }
 
 
 }
+

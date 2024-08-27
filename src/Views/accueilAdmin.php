@@ -81,7 +81,7 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                                                                                                                                                 echo 'checked';
                                                                                                                                             } ?> disabled>
                                                         <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        <a href=""><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="edPlat" data-ed="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
                                                         <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
                                                     </td>
                                                 </tr>
@@ -123,7 +123,7 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                                                                                                                                                 echo 'checked';
                                                                                                                                             } ?> disabled>
                                                         <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        <a href=""><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="edPlat" data-ed="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
                                                         <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
                                                     </td>
                                                 </tr>
@@ -165,7 +165,7 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                                                                                                                                                 echo 'checked';
                                                                                                                                             } ?> disabled>
                                                         <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        <a href=""><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                        <a class="edPlat" data-ed="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
                                                         <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
                                                     </td>
                                                 </tr>
