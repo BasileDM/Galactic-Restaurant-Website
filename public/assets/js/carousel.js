@@ -30,9 +30,10 @@ fetchReviews().then((reviews) => {
     const reviewText = document.createElement("p");
     reviewText.className = "carousel-review-text";
     reviewText.dataset.index = index;
-    reviewText.textContent = review.comments;
+    reviewText.textContent = `"${review.comments}"`;
     reviewText.style.display = index === 0 ? "block" : "none";
     carouselReviews.appendChild(reviewText);
+    review.fullName == "X-22- 7Z20" ? reviewText.style.fontFamily = "Glipervelz" : reviewText.style.fontFamily = "Electrolize";
 
     // Author name element
     const reviewAuthor = document.createElement("p");
