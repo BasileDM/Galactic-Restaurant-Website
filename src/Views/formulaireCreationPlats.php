@@ -6,6 +6,9 @@ include_once __DIR__ . '/Includes/header.php';
     <div>
         <h4>Ajouter un plat</h4>
     </div>
+    <a href="<?php echo HOME_URL . 'admin'; ?>" class="btn btn-sm btn-primary">
+  Retour
+</a>
     <div class="centerFlex">
         <div class="containerFormulaire">
             <form id="formulaireDish" action="<?php echo HOME_URL . 'traiterFormulaireDish'; ?>" method="post">
@@ -54,12 +57,13 @@ include_once __DIR__ . '/Includes/header.php';
                     </select>
                 </div>
 
-                <!-- Bouton Submit -->
-                <button type="submit" class="btn btn-primary">Enregistrer</button>
-
                 <?php if (isset($errorDish)) : ?>
                     <p style="color: red;"><?php echo htmlspecialchars($errorDish); ?></p>
                 <?php endif; ?>
+
+                <!-- Bouton Submit -->
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+
             </form>
         </div>
 
