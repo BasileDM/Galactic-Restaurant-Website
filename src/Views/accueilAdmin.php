@@ -47,129 +47,135 @@ $userRole = $_SESSION['role'] ?? '';
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="entrees" role="tabpanel" aria-labelledby="entrees-tab">
                                     <h3>Entrées</h3>
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">isRobot</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Disponible</th>
-                                            </tr>
-                                        </thead>
-                                        <?php foreach ($entrees as $entree)
-                                        { ?>
-                                            <tbody>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
                                                 <tr>
-                                                    <td><?= $entree['title'] ?></td>
-                                                    <td><?= $entree['description'] ?></td>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($entree['isRobot'])
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">isRobot</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Disponible</th>
+                                                </tr>
+                                            </thead>
+                                            <?php foreach ($entrees as $entree)
+                                            { ?>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><?= $entree['title'] ?></td>
+                                                        <td><?= $entree['description'] ?></td>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($entree['isRobot'])
+                                                                                                                                                {
+                                                                                                                                                    echo 'checked';
+                                                                                                                                                } ?> disabled>
+                                                                <label class="form-check-label" for="flexCheckDefault"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td><?= $entree['price'] ?></td>
+                                                        <td>
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($entree['isAvailable'])
                                                                                                                                             {
                                                                                                                                                 echo 'checked';
                                                                                                                                             } ?> disabled>
                                                             <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td><?= $entree['price'] ?></td>
-                                                    <td>
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($entree['isAvailable'])
-                                                                                                                                        {
-                                                                                                                                            echo 'checked';
-                                                                                                                                        } ?> disabled>
-                                                        <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        <a class="edPlat" data-ed="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
-                                                        <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                            </tbody>
-                                    </table>
+                                                            <a class="edPlat" data-ed="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                            <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                                </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="plats" role="tabpanel" aria-labelledby="plats-tab">
                                     <h3>Plats</h3>
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">isRobot</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Disponible</th>
-                                            </tr>
-                                        </thead>
-                                        <?php foreach ($plats as $plat)
-                                        { ?>
-                                            <tbody>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
                                                 <tr>
-                                                    <td><?= $plat['title'] ?></td>
-                                                    <td><?= $plat['description'] ?></td>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($plat['isRobot'])
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">isRobot</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Disponible</th>
+                                                </tr>
+                                            </thead>
+                                            <?php foreach ($plats as $plat)
+                                            { ?>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><?= $plat['title'] ?></td>
+                                                        <td><?= $plat['description'] ?></td>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($plat['isRobot'])
+                                                                                                                                                {
+                                                                                                                                                    echo 'checked';
+                                                                                                                                                } ?> disabled>
+                                                                <label class="form-check-label" for="flexCheckDefault"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td><?= $plat['price'] ?></td>
+                                                        <td>
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($plat['isAvailable'])
                                                                                                                                             {
                                                                                                                                                 echo 'checked';
                                                                                                                                             } ?> disabled>
                                                             <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td><?= $plat['price'] ?></td>
-                                                    <td>
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($plat['isAvailable'])
-                                                                                                                                        {
-                                                                                                                                            echo 'checked';
-                                                                                                                                        } ?> disabled>
-                                                        <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        <a class="edPlat" data-ed="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
-                                                        <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                            </tbody>
-                                    </table>
+                                                            <a class="edPlat" data-ed="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                            <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                                </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
                                     <h3>Desserts</h3>
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">isRobot</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Disponible</th>
-                                            </tr>
-                                        </thead>
-                                        <?php foreach ($desserts as $dessert)
-                                        { ?>
-                                            <tbody>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
                                                 <tr>
-                                                    <td><?= $dessert['title'] ?></td>
-                                                    <td><?= $dessert['description'] ?></td>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($dessert['isRobot'])
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">isRobot</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Disponible</th>
+                                                </tr>
+                                            </thead>
+                                            <?php foreach ($desserts as $dessert)
+                                            { ?>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><?= $dessert['title'] ?></td>
+                                                        <td><?= $dessert['description'] ?></td>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($dessert['isRobot'])
+                                                                                                                                                {
+                                                                                                                                                    echo 'checked';
+                                                                                                                                                } ?> disabled>
+                                                                <label class="form-check-label" for="flexCheckDefault"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td><?= $dessert['price'] ?></td>
+                                                        <td>
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($dessert['isAvailable'])
                                                                                                                                             {
                                                                                                                                                 echo 'checked';
                                                                                                                                             } ?> disabled>
                                                             <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td><?= $dessert['price'] ?></td>
-                                                    <td>
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($dessert['isAvailable'])
-                                                                                                                                        {
-                                                                                                                                            echo 'checked';
-                                                                                                                                        } ?> disabled>
-                                                        <label class="form-check-label" for="flexCheckDefault"></label>
-                                                        <a class="edPlat" data-ed="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
-                                                        <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                            </tbody>
-                                    </table>
+                                                            <a class="edPlat" data-ed="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
+                                                            <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                                </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -180,46 +186,41 @@ $userRole = $_SESSION['role'] ?? '';
             <!-- Onglet Les reservations -->
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h3>Les réservations</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nom prénom</th>
-                            <th scope="col">Mail</th>
-                            <th scope="col">Date et heure</th>
-                            <th scope="col">Nombre de personne</th>
-                            <th scope="col">Validé</th>
-                        </tr>
-                    </thead>
-                    <?php foreach ($reservations as $reservation)
-                    { ?>
-                        <tbody>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td><?= $reservation['lastName'] ?></td>
-                                <td><?= $reservation['mail'] ?></td>
-                                <td><?= $reservation['resaDate'] ?> à <?= $reservation['resaTime'] ?></td>
-                                <td><?= $reservation['numberOfGuests'] ?></td>
-                                <td>
-                                    <?php if ($reservation['isValide'])
-                                    {
-                                        echo 'valide';
-                                    }
-                                    else
-                                    {
-                                        echo 'pas validé';
-                                    }; ?>
-                                </td>
+                                <th scope="col">Nom prénom</th>
+                                <th scope="col">Mail</th>
+                                <th scope="col">Date et heure</th>
+                                <th scope="col">Nombre de personnes</th>
+                                <th scope="col">Validé</th>
                             </tr>
-                        <?php } ?>
-                        </tbody>
-                </table>
+                        </thead>
+                        <?php foreach ($reservations as $reservation)
+                        { ?>
+                            <tbody>
+                                <tr>
+                                    <td><?= $reservation['lastName'] ?></td>
+                                    <td><?= $reservation['mail'] ?></td>
+                                    <td><?= $reservation['resaDate'] ?> à <?= $reservation['resaTime'] ?></td>
+                                    <td><?= $reservation['numberOfGuests'] ?></td>
+                                    <td>
+                                        <?php if ($reservation['isValide'])
+                                        {
+                                            echo 'Validée';
+                                        }
+                                        else
+                                        {
+                                            echo '<button type="button" class="btn btn-success" data-val="' . $reservation['id_resa'] . '" onclick="validerReservation(this)">Valider</button>';
+                                        }; ?>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-
-</div>
-
-</div>
-</div>
-
-
 </div>
