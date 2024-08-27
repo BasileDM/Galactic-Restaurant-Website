@@ -1,7 +1,6 @@
 <?php
 include_once __DIR__ . '/Includes/header.php';
 $userRole = $_SESSION['role'] ?? '';
-var_dump($_SESSION);
 ?>
 
 <script defer src="assets/js/scriptAdmin.js"></script>
