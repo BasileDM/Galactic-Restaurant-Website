@@ -1,6 +1,7 @@
 <?php
 
 use src\controllers\AdminController;
+use src\controllers\api\ReviewController;
 use src\controllers\DishController;
 use src\controllers\HomeController;
 use src\controllers\ReservationController;
@@ -12,6 +13,7 @@ $homeController = new HomeController;
 $adminController = new AdminController;
 $dishController = new DishController;
 $resaController = new ReservationController;
+$reviewController = new ReviewController;
 
 switch ($route)
 {
@@ -118,6 +120,10 @@ switch ($route)
   case HOME_URL . 'cancel':
     $resaController->cancelReservation();
     $homeController->render("reservationForm", ['success' => 'Votre réservation a bien été annulée !']);
+    break;
+
+  case HOME_URL . 'api/GetReviews':
+    $reviewController->GetReviews();
     break;
 
   default:

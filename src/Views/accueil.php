@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/Includes/header.php';?>
+<?php include_once __DIR__ . '/Includes/header.php'; ?>
 <main>
     <section>
         <h2 class="hero-flavor-text"> À L'Étoile Dorée, faites une pause interstellaire et dégustez une cuisine qui transcende les galaxies. </h2>
@@ -27,52 +27,11 @@
     <section>
         <h2 id="reviews-title">Ce qu'en pensent nos clients</h2>
         <div class="carousel">
-            <script src="assets/js/carousel.js"></script>
-            <div class="carousel-pictures">
-                <div class="carousel-picture" data-index="0">
-                    <img src="assets/imgs/Clients/Client1.png" alt="" width="80px">
-                </div>
-                <div class="carousel-picture" data-index="1">
-                    <img src="assets/imgs/Clients/Client2.png" alt="" width="80px">
-                </div>
-                <div class="carousel-main-picture" data-index="2">
-                    <img src="assets/imgs/Clients/Client3.png" alt="" width="80px">
-                </div>
-                <div class="carousel-picture" data-index="3">
-                    <img src="assets/imgs/Clients/Client4.png" alt="" width="80px">
-                </div>
-                <div class="carousel-picture" data-index="4">
-                    <img src="assets/imgs/Clients/Client5.png" alt="" width="80px">
-                </div>
-            </div>
-            <div class="carousel-review">
-                <p class="carousel-review-text" data-index="0">"Excellent service, recommande fortement!"</p>
-                <p class="carousel-review-author" data-index="0">Predator</p>
-                <p class="carousel-review-subtitle" data-index="0">Guest</p>
-
-                <p class="carousel-review-text" data-index="1" style="display: none;">"Très satisfait de la qualité!"</p>
-                <p class="carousel-review-author" data-index="1" style="display: none;">Stellar Dogg</p>
-                <p class="carousel-review-subtitle" data-index="1" style="display: none;">Guest</p>
-
-                <p class="carousel-review-text" data-index="2" style="display: none;">"An amazing experience from start to finish."</p>
-                <p class="carousel-review-author" data-index="2" style="display: none;">Alexa Johnson</p>
-                <p class="carousel-review-subtitle" data-index="2" style="display: none;">Guest</p>
-
-                <p class="carousel-review-text" data-index="3" style="display: none;">"Would definitely use this service again."</p>
-                <p class="carousel-review-author" data-index="3" style="display: none;">Michael Brown</p>
-                <p class="carousel-review-subtitle" data-index="3" style="display: none;">Guest</p>
-
-                <p class="carousel-review-text" data-index="4" style="display: none; font-family: 'Glipervelz'">"Professional and reliable service."</p>
-                <p class="carousel-review-author" data-index="4" style="display: none;">X-22-7Z20</p>
-                <p class="carousel-review-subtitle" data-index="4" style="display: none;">Guest</p>
-            </div>
-            <div class="carousel-dots">
-                <span class="carousel-dot active" data-index="0"></span>
-                <span class="carousel-dot" data-index="1"></span>
-                <span class="carousel-dot" data-index="2"></span>
-                <span class="carousel-dot" data-index="3"></span>
-                <span class="carousel-dot" data-index="4"></span>
-            </div>
+            <script src="assets/js/carousel.js" type="module"></script>
+            <div class="carousel-pictures"></div>
+            <div class="carousel-review"></div>
+            <div class="carousel-dots"></div>
+        </div>
         </div>
     </section>
 </main>
