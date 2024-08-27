@@ -64,12 +64,9 @@ include_once __DIR__ . '/Includes/header.php';
     [Contact Information, e.g., email or phone number]
     
     <div>
-        <button onclick="history.back()" id="form-reservation-RGPD">Back</button>
+        <button onclick="history.back()" id="form-reservation-RGPD" required>Back</button>
     </div>
 </div>
-
-
-
 
 <?php
 include_once __DIR__ . '/Includes/footer.php';

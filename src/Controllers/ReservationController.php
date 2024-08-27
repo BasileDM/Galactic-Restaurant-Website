@@ -25,6 +25,7 @@ class ReservationController
     $date = htmlspecialchars(trim($_POST['date']));
     $time = htmlspecialchars(trim($_POST['time']));
     $number = filter_var(trim($_POST['number']), FILTER_SANITIZE_NUMBER_INT);
+    $terms = (isset($_POST['terms-conds']));
 
     if (empty($name) || strlen($name) > 50)
     {
@@ -66,6 +67,10 @@ class ReservationController
       $this->render('reservationForm', ['error' => 'Il n\'y a pas assez de places disponibles.']);
       return;
     }
+
+    if (!$terms) {
+      $this->render('reservationForm', ['error' => 'Accepter les termes et conditions avant de continuer']);
+  }
 
     else
     {
