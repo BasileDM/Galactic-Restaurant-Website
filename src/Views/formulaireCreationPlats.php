@@ -9,9 +9,9 @@ include_once __DIR__ . '/Includes/header.php';
     <div class="centerFlex">
         <div class="containerFormulaire">
             <form id="formulaireDish" action="<?php echo HOME_URL . 'traiterFormulaireDish'; ?>" method="post">
-            <input type="hidden" id="id_dish" name="id_dish" value="<?= isset($dish['id_dish']) ? $dish['id_dish'] : '' ?>">
-    
-            <!-- Champ Name -->
+                <input type="hidden" id="id_dish" name="id_dish" value="<?= isset($dish['id_dish']) ? $dish['id_dish'] : '' ?>">
+
+                <!-- Champ Name -->
                 <div>
                     <label for="name" class="form-label">Nom</label>
                     <input type="text" class="form-control" id="name" name="name" required value="<?= isset($dish['title']) ? $dish['title'] : '' ?>">
@@ -48,14 +48,18 @@ include_once __DIR__ . '/Includes/header.php';
                 <div>
                     <label for="type" class="form-label">Catégorie</label>
                     <select class="form-select" id="type" name="type">
-                    <option value="1" <?= isset($dish['id_types']) && $dish['id_types'] == 1 ? 'selected' : '' ?>>Entrée</option>
-        <option value="2" <?= isset($dish['id_types']) && $dish['id_types'] == 2 ? 'selected' : '' ?>>Plat</option>
-        <option value="3" <?= isset($dish['id_types']) && $dish['id_types'] == 3 ? 'selected' : '' ?>>Dessert</option>
+                        <option value="1" <?= isset($dish['id_types']) && $dish['id_types'] == 1 ? 'selected' : '' ?>>Entrée</option>
+                        <option value="2" <?= isset($dish['id_types']) && $dish['id_types'] == 2 ? 'selected' : '' ?>>Plat</option>
+                        <option value="3" <?= isset($dish['id_types']) && $dish['id_types'] == 3 ? 'selected' : '' ?>>Dessert</option>
                     </select>
                 </div>
 
                 <!-- Bouton Submit -->
                 <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+                <?php if (isset($errorDish)) : ?>
+                    <p style="color: red;"><?php echo htmlspecialchars($errorDish); ?></p>
+                <?php endif; ?>
             </form>
         </div>
 
