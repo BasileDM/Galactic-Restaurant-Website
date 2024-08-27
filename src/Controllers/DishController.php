@@ -59,6 +59,7 @@ class DishController
                 }
 
                 $dishRepo = new DishRepository();
+                $logRepository = new LogRepository();
 
                 if (isset($_POST['id_dish']) && !empty($_POST['id_dish']))
                 {
@@ -77,7 +78,7 @@ class DishController
                             $price,
                             $type
                         );
-                        $logRepository = new LogRepository();
+                        // Save the log
                         $logRepository->addLog($_SESSION['id'], 'dish', $id_dish);
                         header('Location: ' . HOME_URL . 'admin');
                     }
@@ -90,6 +91,7 @@ class DishController
                 {
                     $dish = new Dish(null, $type, $isRobot, $isAvailable, $price, $title, $description, 1);
                     $dishRepo->ajouterPlats($dish);
+                    $logRepository->addLog($_SESSION['id'], 'dish', $dish->getId());
                     header('Location: ' . HOME_URL . 'admin');
                 }
             }
@@ -108,9 +110,12 @@ class DishController
                 $idDishASup = $data['idDishASup'];
                 $dishRepo = new DishRepository();
                 $success = $dishRepo->supprimerDish($idDishASup);
+                $logRepository = new LogRepository();
 
                 if ($success)
                 {
+                    // Save the log
+                    $logRepository->addLog($_SESSION['id'], 'dish', $idDishASup);
                     echo json_encode(['success' => true]);
                 }
                 else
