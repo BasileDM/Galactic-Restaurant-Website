@@ -14,12 +14,6 @@ class DishController
         if ($_SERVER["REQUEST_METHOD"] === "POST")
         {
 
-            if (empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['type']))
-            {
-                $this->render('formulaireCreationPlats', ['success' => false, 'message' => 'Veuillez renseigner tous les champs.']);
-                return;
-            }
-
             $isAvailable = 0;
             $isRobot = 0;
             if (isset($_POST['isAvailable']))
@@ -46,6 +40,25 @@ class DishController
                 $type = htmlspecialchars($_POST['type']);
                 $price = htmlspecialchars($_POST['price']);
                 $description = htmlspecialchars($_POST['description']);
+
+                
+                if (empty($title) || strlen($title) > 30 || strlen($title) < 5)
+                {
+                  $this->render('formulaireCreationPlats', ['errorDish' => 'Le nom doit avoir entre 6 et 30 caractères.']);
+                  return;
+                }
+
+                if (empty($description) || strlen($description) > 250 || strlen($description) < 9)
+                {
+                  $this->render('formulaireCreationPlats', ['errorDish' => 'La description doit contenir entre 10 et 250 caractères.']);
+                  return;
+                }
+
+                if (empty($price) || !ctype_digit($price) || (int)$price <= 0) {
+                    $this->render('formulaireCreationPlats', ['errorDish' => 'Le prix doit être un nombre entier supérieur à 0']);
+                    return;
+                }
+
 
                 $dishRepo = new DishRepository();
 
