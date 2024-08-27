@@ -211,7 +211,7 @@ $userRole = $_SESSION['role'] ?? '';
                                         }
                                         else
                                         {
-                                            echo '<button type="button" class="btn btn-success" data-val="' . $reservation['id_resa'] . '" onclick="ValidateReservation(this)">Valider</button>';
+                                            echo '<button type="button" class="btn btn-success" data-mail="' . $reservation['mail'] . '" data-time="' . $reservation['resaDate'] . '" data-name="' . $reservation['lastName'] . '" data-val="' . $reservation['id_resa'] . '" onclick="ValidateReservation(this)">Valider</button>';
                                         }; ?>
                                     </td>
                                 </tr>

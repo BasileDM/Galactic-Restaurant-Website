@@ -147,7 +147,7 @@ switch ($route)
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
       $data = json_decode(file_get_contents('php://input'), true);
-      $result = $resaController->validateReservation($data['idResa']);
+      $result = $resaController->validateReservation($data['idResa'], $data['mail'], $data['time'], $data['name']);
       echo json_encode($result);
     }
     break;

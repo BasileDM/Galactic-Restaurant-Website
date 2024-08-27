@@ -64,14 +64,23 @@ function ouvrirEdDish(idDishAEd) {
 }
 
 function ValidateReservation(reservation) {
+  console.log(reservation);
   let idResa = reservation.getAttribute("data-val");
+  let mail = reservation.getAttribute("data-mail");
+  let time = reservation.getAttribute("data-time");
+  let name = reservation.getAttribute("data-name");
 
   fetch(HOME_URL + "validateReservation", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ idResa: idResa }),
+    body: JSON.stringify({
+      idResa: idResa,
+      mail: mail,
+      time: time,
+      name: name
+    }),
   })
     .then((response) => response.json())
     .then((data) => {

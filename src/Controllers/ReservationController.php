@@ -3,6 +3,7 @@
 namespace src\controllers;
 
 use src\Models\Reservation;
+use src\Repositories\LogRepository;
 use src\Repositories\ReservationRepository;
 use src\Services\HelperService;
 use src\Services\Reponse;
@@ -141,12 +142,16 @@ class ReservationController
     }
   }
 
-  public function validateReservation($idResa)
+  public function validateReservation($idResa, $mail, $time, $name)
   {
     $reservationRepository = new ReservationRepository();
+    $logRepository = new LogRepository();
+    $helperService = new HelperService();
     $result = $reservationRepository->validateReservation($idResa);
     if ($result === true)
     {
+      $logRepository->addLog($_SESSION['id'], 'reservation', $idResa);
+      $helperService->sendConfirmationMail($mail, $time, $name);
       return ['status' => 'success'];
     }
     else
