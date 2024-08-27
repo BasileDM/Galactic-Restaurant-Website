@@ -4,6 +4,7 @@ namespace src\controllers;
 
 use src\Models\Dish;
 use src\Repositories\DishRepository;
+use src\Repositories\LogRepository;
 use src\Services\Reponse;
 
 class DishController
@@ -13,7 +14,6 @@ class DishController
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST")
         {
-
             $isAvailable = 0;
             $isRobot = 0;
             if (isset($_POST['isAvailable']))
@@ -25,7 +25,6 @@ class DishController
             {
                 $isRobot = 1;
             }
-
 
             if (
                 isset($_POST['name'])
@@ -41,28 +40,25 @@ class DishController
                 $price = htmlspecialchars($_POST['price']);
                 $description = htmlspecialchars($_POST['description']);
 
-                
                 if (empty($title) || strlen($title) > 30 || strlen($title) < 5)
                 {
-                  $this->render('formulaireCreationPlats', ['errorDish' => 'Le nom doit avoir entre 6 et 30 caractères.']);
-                  return;
+                    $this->render('formulaireCreationPlats', ['errorDish' => 'Le nom doit avoir entre 6 et 30 caractères.']);
+                    return;
                 }
 
                 if (empty($description) || strlen($description) > 250 || strlen($description) < 9)
                 {
-                  $this->render('formulaireCreationPlats', ['errorDish' => 'La description doit contenir entre 10 et 250 caractères.']);
-                  return;
+                    $this->render('formulaireCreationPlats', ['errorDish' => 'La description doit contenir entre 10 et 250 caractères.']);
+                    return;
                 }
 
-                if (empty($price) || !ctype_digit($price) || (int)$price <= 0) {
+                if (empty($price) || !ctype_digit($price) || (int)$price <= 0)
+                {
                     $this->render('formulaireCreationPlats', ['errorDish' => 'Le prix doit être un nombre entier supérieur à 0']);
                     return;
                 }
 
-
                 $dishRepo = new DishRepository();
-
-
 
                 if (isset($_POST['id_dish']) && !empty($_POST['id_dish']))
                 {
@@ -71,7 +67,7 @@ class DishController
 
                     if ($dish)
                     {
-                        // Mettre à jour l'atelier existant
+                        // Mettre à jour le plat existant
                         $dishRepo->editerDish(
                             $id_dish,
                             $title,
@@ -81,27 +77,24 @@ class DishController
                             $price,
                             $type
                         );
+                        $logRepository = new LogRepository();
+                        $logRepository->addLog($_SESSION['id'], 'dish', $id_dish);
                         header('Location: ' . HOME_URL . 'admin');
                     }
                     else
                     {
-
                         echo "Plat non trouvé.";
                     }
                 }
                 else
                 {
-
                     $dish = new Dish(null, $type, $isRobot, $isAvailable, $price, $title, $description, 1);
-
                     $dishRepo->ajouterPlats($dish);
-
                     header('Location: ' . HOME_URL . 'admin');
                 }
             }
         }
     }
-
 
     public function supprimerDish()
     {

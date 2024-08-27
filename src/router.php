@@ -43,7 +43,7 @@ switch ($route)
     {
       $adminController->affichePageAdmin();
     }
-    else 
+    else
     {
       header('location: ' . HOME_URL . 'login');
       exit;
@@ -62,7 +62,6 @@ switch ($route)
     }
     break;
 
-
   case HOME_URL . 'aPropos':
     $homeController->affichePagePropos();
     break;
@@ -72,17 +71,20 @@ switch ($route)
     break;
 
   case HOME_URL . 'ajoutPlat':
-    if(isset($_GET['id'])){
+    if (isset($_GET['id']))
+    {
       $id = htmlspecialchars($_GET['id']);
       $adminController->affichePageCreationPlats($id);
-    } else {
+    }
+    else
+    {
       $adminController->affichePageCreationPlats();
     }
     break;
-  
 
   case HOME_URL . 'traiterFormulaireDish':
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET')
+    {
       header('location: ' . HOME_URL . 'menu');
       exit;
     }
@@ -101,9 +103,9 @@ switch ($route)
     }
     break;
 
-    case HOME_URL . 'RGPD':
-      $resaController->viewRGPD();
-      break;
+  case HOME_URL . 'RGPD':
+    $resaController->viewRGPD();
+    break;
 
   case HOME_URL . 'supprimerDish':
     $dishController->supprimerDish();

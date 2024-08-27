@@ -23,22 +23,22 @@ class AdminController
         {
             $username = $_POST['username'];
             $mdp = $_POST['password'];
-    
+
             $adminRepository = new AdminRepository(); 
 
             $admin = $adminRepository->verifyUser($username, $mdp);
     
-            if($admin) {
-                session_start();
-    
+            if($admin) 
+            {                
                 $_SESSION['connecte'] = true;
                 $_SESSION['utilisateur'] = $admin;
-                
-                
-                
+                $_SESSION['id'] = $admin['id_Admin'];
+
                 header('location:' . HOME_URL . 'admin');
                 die();
-            } else {
+            } 
+            else 
+            {
                 header('location:' . HOME_URL . 'login');
                 die();
             }
