@@ -140,4 +140,18 @@ class ReservationController
       }
     }
   }
+
+  public function validateReservation($idResa)
+  {
+    $reservationRepository = new ReservationRepository();
+    $result = $reservationRepository->validateReservation($idResa);
+    if ($result === true)
+    {
+      return ['status' => 'success'];
+    }
+    else
+    {
+      return ['status' => 'error'];
+    }
+  }
 }

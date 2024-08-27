@@ -115,14 +115,16 @@ switch ($route)
     break;
 
   case HOME_URL . 'supprimerDish':
-    if (isset($_SESSION['connecte']) && $_SESSION['connecte']){
-         $dishController->supprimerDish();
-    break;
-    } else {
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
+    {
+      $dishController->supprimerDish();
+      break;
+    }
+    else
+    {
       $homeController->affichePage404();
       break;
     }
- 
 
   case HOME_URL . 'getSeatsAvailability':
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['date']))
@@ -139,6 +141,15 @@ switch ($route)
 
   case HOME_URL . 'api/GetReviews':
     $reviewController->GetReviews();
+    break;
+
+  case HOME_URL . 'validateReservation':
+    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+      $data = json_decode(file_get_contents('php://input'), true);
+      $result = $resaController->validateReservation($data['idResa']);
+      echo json_encode($result);
+    }
     break;
 
   default:

@@ -4,7 +4,6 @@ $userRole = $_SESSION['role'] ?? '';
 ?>
 
 <script defer src="assets/js/scriptAdmin.js"></script>
-
 <div>
     <div class="container mt-5">
         <!-- Nav tabs -->
@@ -212,7 +211,7 @@ $userRole = $_SESSION['role'] ?? '';
                                         }
                                         else
                                         {
-                                            echo '<button type="button" class="btn btn-success" data-val="' . $reservation['id_resa'] . '" onclick="validerReservation(this)">Valider</button>';
+                                            echo '<button type="button" class="btn btn-success" data-val="' . $reservation['id_resa'] . '" onclick="ValidateReservation(this)">Valider</button>';
                                         }; ?>
                                     </td>
                                 </tr>
