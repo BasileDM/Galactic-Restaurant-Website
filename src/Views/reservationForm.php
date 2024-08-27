@@ -30,7 +30,7 @@ include_once __DIR__ . '/Includes/header.php';
       
       <div id="terms-conds">
           <label for="checkbox">I agree</label>  
-          <input type="checkbox" id="checkbox-RGPD"/>
+          <input type="checkbox" id="checkbox-RGPD" name="terms-conds"/>
       </div>
             <a href=<?php echo HOME_URL . "RGPD"; ?>>Terms and conditions</a>
 
