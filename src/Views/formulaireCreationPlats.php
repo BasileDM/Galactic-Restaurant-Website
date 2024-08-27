@@ -9,7 +9,7 @@ include_once __DIR__ . '/Includes/header.php';
     <div class="centerFlex">
         <div class="containerFormulaire">
             <form id="formulaireDish" action="<?php echo HOME_URL . 'traiterFormulaireDish'; ?>" method="post">
-            <input type="hidden" id="DishId" name="id" value="<?= isset($dish['id_dish']) ? $dish['id_dish'] : '' ?>">
+            <input type="hidden" id="id_dish" name="id_dish" value="<?= isset($dish['id_dish']) ? $dish['id_dish'] : '' ?>">
     
             <!-- Champ Name -->
                 <div>
@@ -24,7 +24,7 @@ include_once __DIR__ . '/Includes/header.php';
 
                 <!-- Checkbox isRobot -->
                 <div class="form-check">
-                    <input class="form-check-input grey" type="checkbox" id="isRobot" name="isRobot">
+                    <input class="form-check-input grey" type="checkbox" id="isRobot" name="isRobot" <?= isset($dish['isRobot']) && $dish['isRobot'] ? 'checked' : '' ?>>
                     <label class="form-check-label" for="isRobot">
                         isRobot
                     </label>
@@ -38,7 +38,7 @@ include_once __DIR__ . '/Includes/header.php';
 
                 <!-- Checkbox isAvailable -->
                 <div class="form-check mb-3">
-                    <input class="form-check-input grey" type="checkbox" id="isAvailable" name="isAvailable">
+                    <input class="form-check-input grey" type="checkbox" id="isAvailable" name="isAvailable" <?= isset($dish['isAvailable']) && $dish['isAvailable'] ? 'checked' : '' ?>>
                     <label class="form-check-label" for="isAvailable">
                         Disponible
                     </label>
@@ -48,9 +48,9 @@ include_once __DIR__ . '/Includes/header.php';
                 <div>
                     <label for="type" class="form-label">Catégorie</label>
                     <select class="form-select" id="type" name="type">
-                        <option value="1">Entrée</option>
-                        <option value="2">Plat</option>
-                        <option value="3">Dessert</option>
+                    <option value="1" <?= isset($dish['id_types']) && $dish['id_types'] == 1 ? 'selected' : '' ?>>Entrée</option>
+        <option value="2" <?= isset($dish['id_types']) && $dish['id_types'] == 2 ? 'selected' : '' ?>>Plat</option>
+        <option value="3" <?= isset($dish['id_types']) && $dish['id_types'] == 3 ? 'selected' : '' ?>>Dessert</option>
                     </select>
                 </div>
 
