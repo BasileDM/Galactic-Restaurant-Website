@@ -32,7 +32,6 @@
             <div class="carousel-review"></div>
             <div class="carousel-dots"></div>
         </div>
-        </div>
     </section>
 </main>
 

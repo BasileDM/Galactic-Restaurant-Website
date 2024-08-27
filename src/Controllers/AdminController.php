@@ -23,22 +23,22 @@ class AdminController
         {
             $username = $_POST['username'];
             $mdp = $_POST['password'];
-    
+
             $adminRepository = new AdminRepository(); 
 
             $admin = $adminRepository->verifyUser($username, $mdp);
     
-            if($admin) {
-                session_start();
-    
+            if($admin) 
+            {
                 $_SESSION['connecte'] = true;
-                $_SESSION['utilisateur'] = $admin;
-                
-                
-                
+                $_SESSION['role'] = $admin['role'];
+                $_SESSION['id'] = $admin['id_Admin'];
+
                 header('location:' . HOME_URL . 'admin');
                 die();
-            } else {
+            } 
+            else 
+            {
                 header('location:' . HOME_URL . 'login');
                 die();
             }
@@ -46,7 +46,6 @@ class AdminController
     } 
 
     public function logout() {
-    
         session_destroy();
         
         header("Location: " . HOME_URL . "login");
@@ -76,7 +75,4 @@ class AdminController
         $this->render("formulaireCreationPlats");
         exit;
     }
-
-
 }
-

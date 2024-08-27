@@ -62,7 +62,6 @@ switch ($route)
     }
     break;
 
-
   case HOME_URL . 'aPropos':
     $homeController->affichePagePropos();
     break;
@@ -74,7 +73,6 @@ switch ($route)
   case HOME_URL . 'ajoutPlat':
     if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
     {
-
       if (isset($_GET['id']))
       {
         $id = htmlspecialchars($_GET['id']);
@@ -84,14 +82,12 @@ switch ($route)
       {
         $adminController->affichePageCreationPlats();
       }
-      break;
     }
     else
     {
       $homeController->affichePage404();
-      break;
     }
-
+    break;
 
   case HOME_URL . 'traiterFormulaireDish':
     if ($_SERVER['REQUEST_METHOD'] === 'GET')

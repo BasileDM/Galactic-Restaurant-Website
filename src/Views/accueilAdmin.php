@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '/Includes/header.php';
-$userRole = $_SESSION['utilisateur']['role'] ?? '';
+$userRole = $_SESSION['role'] ?? '';
+var_dump($_SESSION);
 ?>
 
 <script defer src="assets/js/scriptAdmin.js"></script>
@@ -13,13 +14,11 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Les menus</button>
             </li>
 
-            <?php if ($userRole === '["ROLE_ADMIN"]'): ?>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Les reservations</button>
-            </li>
-
+            <?php if ($userRole === "admin") : ?>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Les reservations</button>
+                </li>
             <?php endif; ?>
-
         </ul>
 
         <!-- Tab panes -->
@@ -76,10 +75,10 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                                                     </td>
                                                     <td><?= $entree['price'] ?></td>
                                                     <td>
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  <?php if ($entree['isAvailable'])
-                                                                                                                                            {
-                                                                                                                                                echo 'checked';
-                                                                                                                                            } ?> disabled>
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($entree['isAvailable'])
+                                                                                                                                        {
+                                                                                                                                            echo 'checked';
+                                                                                                                                        } ?> disabled>
                                                         <label class="form-check-label" for="flexCheckDefault"></label>
                                                         <a class="edPlat" data-ed="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
                                                         <a class="supPlat" data-sup="<?= $entree['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
@@ -119,9 +118,9 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                                                     <td><?= $plat['price'] ?></td>
                                                     <td>
                                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($plat['isAvailable'])
-                                                                                                                                            {
-                                                                                                                                                echo 'checked';
-                                                                                                                                            } ?> disabled>
+                                                                                                                                        {
+                                                                                                                                            echo 'checked';
+                                                                                                                                        } ?> disabled>
                                                         <label class="form-check-label" for="flexCheckDefault"></label>
                                                         <a class="edPlat" data-ed="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
                                                         <a class="supPlat" data-sup="<?= $plat['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
@@ -161,9 +160,9 @@ $userRole = $_SESSION['utilisateur']['role'] ?? '';
                                                     <td><?= $dessert['price'] ?></td>
                                                     <td>
                                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" <?php if ($dessert['isAvailable'])
-                                                                                                                                            {
-                                                                                                                                                echo 'checked';
-                                                                                                                                            } ?> disabled>
+                                                                                                                                        {
+                                                                                                                                            echo 'checked';
+                                                                                                                                        } ?> disabled>
                                                         <label class="form-check-label" for="flexCheckDefault"></label>
                                                         <a class="edPlat" data-ed="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconCrayon.png" alt="icone pen"></a>
                                                         <a class="supPlat" data-sup="<?= $dessert['id_dish'] ?>"><img src="assets/imgs/icones/iconBin.png" alt="icon bin"></a>
