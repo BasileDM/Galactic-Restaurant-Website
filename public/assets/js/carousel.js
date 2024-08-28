@@ -1,4 +1,4 @@
-import Review from "./Classes/Review";
+import Review from "./Classes/Review.js";
 
 const fetchReviews = async () => {
   const response = await fetch(HOME_URL + "api/GetReviews");
