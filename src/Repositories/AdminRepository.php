@@ -40,6 +40,14 @@ class AdminRepository
     public function dropTables()
     {
         $tables = [
+            'Rest_Cook',
+            'Rest_Reservation',
+            'Rest_Admin',
+            'Rest_Customer_Review',
+            'Rest_TypesOfDish',
+            'Rest_Dish',
+            'Rest_Dish_Logs',
+            'Rest_Reservation_Logs',
             'rest_cook',
             'rest_reservation',
             'rest_admin',
@@ -50,7 +58,8 @@ class AdminRepository
             'rest_reservation_logs'
         ];
 
-        foreach ($tables as $table) {
+        foreach ($tables as $table)
+        {
             $query = $this->DB->prepare("DROP TABLE IF EXISTS $table");
             $query->execute();
         }
