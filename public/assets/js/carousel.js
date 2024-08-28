@@ -1,4 +1,5 @@
 import Review from "./Classes/Review.js";
+// import { HOME_URL } from "./config.js";
 
 const fetchReviews = async () => {
   const response = await fetch(HOME_URL + "api/GetReviews");

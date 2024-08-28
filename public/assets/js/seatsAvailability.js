@@ -1,4 +1,3 @@
-const API_URL = "/";
 // import { HOME_URL } from "./config";
 
 document.addEventListener("DOMContentLoaded", () => {
