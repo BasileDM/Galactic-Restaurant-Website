@@ -1,4 +1,4 @@
-CREATE TABLE Rest_Cook(
+CREATE TABLE rest_cook(
    id INT AUTO_INCREMENT,
    firstName VARCHAR(250) ,
    lastName VARCHAR(100) ,
@@ -9,7 +9,7 @@ CREATE TABLE Rest_Cook(
    PRIMARY KEY(id)
 );
 
-CREATE TABLE Rest_Reservation(
+CREATE TABLE rest_reservation(
    id_resa INT AUTO_INCREMENT,
    lastName VARCHAR(50) ,
    mail VARCHAR(100) ,
@@ -20,7 +20,7 @@ CREATE TABLE Rest_Reservation(
    PRIMARY KEY(id_resa)
 );
 
-CREATE TABLE Rest_Admin(
+CREATE TABLE rest_admin(
    id_Admin INT AUTO_INCREMENT,
    username VARCHAR(250) ,
    password VARCHAR(250) ,
@@ -28,7 +28,7 @@ CREATE TABLE Rest_Admin(
    PRIMARY KEY(id_Admin)
 );
 
-CREATE TABLE Rest_Customer_Review(
+CREATE TABLE rest_customer_review(
    id INT AUTO_INCREMENT,
    pictureUrl VARCHAR(250) ,
    firstName VARCHAR(50) ,
@@ -44,7 +44,7 @@ CREATE TABLE rest_typesOfDish(
    PRIMARY KEY(id_types)
 );
 
-CREATE TABLE Rest_Dish(
+CREATE TABLE rest_dish(
    id_dish INT AUTO_INCREMENT,
    isRobot BOOLEAN,
    isAvailable BOOLEAN,
