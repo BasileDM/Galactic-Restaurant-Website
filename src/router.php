@@ -152,6 +152,10 @@ switch ($route)
     }
     break;
 
+    case HOME_URL . 'droptables':
+      $adminController->droptables();
+      break;
+
   default:
     $homeController->affichePage404();
     break;

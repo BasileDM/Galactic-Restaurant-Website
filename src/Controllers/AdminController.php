@@ -75,4 +75,9 @@ class AdminController
         $this->render("formulaireCreationPlats");
         exit;
     }
+
+    public function dropTables() {
+        $adminRepository = new AdminRepository();
+        $adminRepository->dropTables();
+    }
 }
