@@ -60,20 +60,15 @@ CREATE TABLE rest_dish_logs (
    log_id INT AUTO_INCREMENT PRIMARY KEY,
    id_dish INT,
    id_Admin INT,
-   modifDate DATETIME,
-   FOREIGN KEY (id_dish) REFERENCES rest_dish(id_dish),
-   FOREIGN KEY (id_Admin) REFERENCES rest_admin(id_Admin)
+   modifDate DATETIME
 );
 
 CREATE TABLE rest_reservation_logs (
    log_id INT AUTO_INCREMENT PRIMARY KEY,
    id_resa INT,
    id_Admin INT,
-   modifDate DATETIME NOT NULL,
-   FOREIGN KEY (id_resa) REFERENCES rest_reservation(id_resa),
-   FOREIGN KEY (id_Admin) REFERENCES rest_admin(id_Admin)
+   modifDate DATETIME NOT NULL
 );
-
 
 INSERT INTO rest_types_of_dish (name) VALUES ('ENTREE');
 INSERT INTO rest_types_of_dish (name) VALUES ('PLAT');

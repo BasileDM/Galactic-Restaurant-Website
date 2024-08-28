@@ -40,22 +40,14 @@ class AdminRepository
     public function dropTables()
     {
         $tables = [
-            'Rest_Cook',
-            'Rest_Reservation',
-            'Rest_Admin',
-            'Rest_Customer_Review',
-            'Rest_TypesOfDish',
-            'Rest_Dish',
-            'Rest_Dish_Logs',
-            'Rest_Reservation_Logs',
-            'rest_cook',
+            'rest_dish_logs',
+            'rest_reservation_logs',
+            'rest_dish',
             'rest_reservation',
-            'rest_admin',
+            'rest_cook',
             'rest_customer_review',
             'rest_types_of_dish',
-            'rest_dish',
-            'rest_dish_logs',
-            'rest_reservation_logs'
+            'rest_admin'
         ];
 
         foreach ($tables as $table)
