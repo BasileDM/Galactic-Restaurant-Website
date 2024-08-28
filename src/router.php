@@ -1,10 +1,10 @@
 <?php
 
-use src\controllers\AdminController;
-use src\controllers\api\ReviewController;
-use src\controllers\DishController;
-use src\controllers\HomeController;
-use src\controllers\ReservationController;
+use src\Controllers\AdminController;
+use src\Controllers\api\ReviewController;
+use src\Controllers\DishController;
+use src\Controllers\HomeController;
+use src\Controllers\ReservationController;
 
 $route = $_SERVER['REDIRECT_URL'];
 $methode = $_SERVER['REQUEST_METHOD'];
