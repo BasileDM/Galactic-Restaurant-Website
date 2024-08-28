@@ -111,8 +111,8 @@ switch ($route)
     break;
 
   case HOME_URL . 'RGPD':
-    $resaController->viewRGPD();
-    break;
+      $resaController->viewRGPD();
+      break;
 
   case HOME_URL . 'supprimerDish':
     if (isset($_SESSION['connecte']) && $_SESSION['connecte'])

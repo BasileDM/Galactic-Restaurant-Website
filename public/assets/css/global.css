@@ -300,54 +300,11 @@ h2 {
   letter-spacing: 4px;
 }
 
-/* booking section*/
-.primary-title-back-stroke {
-  color: var(--color-primary);
-  text-align: center;
-}
-.big-reservation-title {
-  font-size: 2.5em;
-  color: white;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
-}
-#bottom-illustration-text {
-  text-align: center;
-  color: grey;
-  padding: 12px;
-  line-height: 22px;
-  letter-spacing: 2px;
-  font-style: normal;
-}
-#reservation-button {
-  width: 100px;
-  border: 3px solid var(--color-primary);
-  margin: 12px auto;
-  padding: 4px;
-  color: var(--color-primary);
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-  background-color: black;
-}
-#reservation-button:hover {
-  background-color: var(--color-primary);
-  color: black;
-  transition: 0.5s;
-}
-
-#checkbox-RGPD {
-  margin-left: 6px;
-  width: auto;
-}
-
 /* RGPD */
 
 #RGPD {
   margin: 10px;
 }
-
-
 
 /* Reviews section */
 #reviews-title {
@@ -413,6 +370,11 @@ footer p {
   font-family: "Calibri", sans-serif;
   font-size: 1.3em;
 }
+
+#terms-footer{
+  color: white;
+}
+
 .footer-box-container {
   display: flex;
   flex-direction: column;
@@ -500,6 +462,46 @@ footer p {
   background-color: white;
   color: var(--color-primary);
   transition: 0.5s;
+}
+
+.primary-title-back-stroke {
+  color: var(--color-primary);
+  text-align: center;
+}
+.big-reservation-title {
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+#bottom-illustration-text {
+  text-align: center;
+  color: grey;
+  padding: 12px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  font-style: normal;
+}
+#reservation-button {
+  width: 100px;
+  border: 3px solid var(--color-primary);
+  margin: 12px auto;
+  padding: 4px;
+  color: var(--color-primary);
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  background-color: black;
+}
+#reservation-button:hover {
+  background-color: var(--color-primary);
+  color: black;
+  transition: 0.5s;
+}
+
+#checkbox-RGPD {
+  margin-left: 6px;
+  width: auto;
 }
 
 /* LOGIN PAGE */
