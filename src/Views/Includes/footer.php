@@ -1,7 +1,7 @@
 </body>
 <footer>
   <div class="footer-logo-container">
-    <img src="assets/imgs/logo.png" alt="L'étoile dorée logo" class="footer-logo">
+    <img src="assets/imgs/Logo.png" alt="L'étoile dorée logo" class="footer-logo">
   </div>
   <div class="footer-boxes-container">
     <div class="footer-box">
