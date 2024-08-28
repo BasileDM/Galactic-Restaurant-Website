@@ -93,7 +93,7 @@ switch ($route)
     }
     break;
 
-    case HOME_URL . 'RGPD':
+  case HOME_URL . 'RGPD':
       $resaController->viewRGPD();
       break;
 

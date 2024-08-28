@@ -23,6 +23,7 @@
   <div class="footer-copyright">
     <p> L'étoile dorée </p>
     <p> Copyright © 578024. Tous droits réservés. </p>
+    <a href=<?php echo HOME_URL . "RGPD"; ?> id="terms-footer">Terms and conditions</a>
   </div>
 </footer>
 
