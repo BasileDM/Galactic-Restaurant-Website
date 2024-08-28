@@ -119,6 +119,28 @@ public function supprimerDish($idDishASup)
   return $query->execute(['id' => $idDishASup]);
 }
 
+public function getDishById($id){
+  $sql = "SELECT * FROM rest_dish WHERE id_dish=:id_dish";
+  $query = $this->DB->prepare($sql);
+  $query->execute(['id_dish' => $id]);
+$dish = $query->fetch(PDO::FETCH_ASSOC);
+return $dish;
+}
+
+public function editerDish($id_dish, $title, $description, $isRobot, $isAvailable, $price, $id_types) {
+  $sql = "UPDATE rest_dish SET title = :title, description = :description, isRobot = :isRobot, isAvailable = :isAvailable, price = :price, id_types = :id_types WHERE id_dish = :id_dish";
+  $query = $this->DB->prepare($sql);
+  return $query->execute([
+      'id_dish' => $id_dish,
+      'title' => $title,
+      'description' => $description,
+      'isRobot' => $isRobot,
+      'isAvailable' => $isAvailable,
+      'price' => $price,
+      'id_types' => $id_types,
+  ]);
+}
+
 
 }
 

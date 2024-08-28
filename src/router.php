@@ -1,6 +1,7 @@
 <?php
 
 use src\controllers\AdminController;
+use src\controllers\api\ReviewController;
 use src\controllers\DishController;
 use src\controllers\HomeController;
 use src\controllers\ReservationController;
@@ -12,6 +13,7 @@ $homeController = new HomeController;
 $adminController = new AdminController;
 $dishController = new DishController;
 $resaController = new ReservationController;
+$reviewController = new ReviewController;
 
 switch ($route)
 {
@@ -41,7 +43,7 @@ switch ($route)
     {
       $adminController->affichePageAdmin();
     }
-    else 
+    else
     {
       header('location: ' . HOME_URL . 'login');
       exit;
@@ -60,7 +62,6 @@ switch ($route)
     }
     break;
 
-
   case HOME_URL . 'aPropos':
     $homeController->affichePagePropos();
     break;
@@ -70,11 +71,27 @@ switch ($route)
     break;
 
   case HOME_URL . 'ajoutPlat':
-    $adminController->affichePageCreationPlats();
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
+    {
+      if (isset($_GET['id']))
+      {
+        $id = htmlspecialchars($_GET['id']);
+        $adminController->affichePageCreationPlats($id);
+      }
+      else
+      {
+        $adminController->affichePageCreationPlats();
+      }
+    }
+    else
+    {
+      $homeController->affichePage404();
+    }
     break;
 
   case HOME_URL . 'traiterFormulaireDish':
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET')
+    {
       header('location: ' . HOME_URL . 'menu');
       exit;
     }
@@ -98,8 +115,16 @@ switch ($route)
       break;
 
   case HOME_URL . 'supprimerDish':
-    $dishController->supprimerDish();
-    break;
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
+    {
+      $dishController->supprimerDish();
+      break;
+    }
+    else
+    {
+      $homeController->affichePage404();
+      break;
+    }
 
   case HOME_URL . 'getSeatsAvailability':
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['date']))
@@ -112,6 +137,19 @@ switch ($route)
   case HOME_URL . 'cancel':
     $resaController->cancelReservation();
     $homeController->render("reservationForm", ['success' => 'Votre réservation a bien été annulée !']);
+    break;
+
+  case HOME_URL . 'api/GetReviews':
+    $reviewController->GetReviews();
+    break;
+
+  case HOME_URL . 'validateReservation':
+    if ($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+      $data = json_decode(file_get_contents('php://input'), true);
+      $result = $resaController->validateReservation($data['idResa'], $data['mail'], $data['time'], $data['name']);
+      echo json_encode($result);
+    }
     break;
 
   default:

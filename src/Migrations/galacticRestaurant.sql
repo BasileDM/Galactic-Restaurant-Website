@@ -1,4 +1,4 @@
-CREATE TABLE Rest_Cook(
+CREATE TABLE rest_cook(
    id INT AUTO_INCREMENT,
    firstName VARCHAR(250) ,
    lastName VARCHAR(100) ,
@@ -9,7 +9,7 @@ CREATE TABLE Rest_Cook(
    PRIMARY KEY(id)
 );
 
-CREATE TABLE Rest_Reservation(
+CREATE TABLE rest_reservation(
    id_resa INT AUTO_INCREMENT,
    lastName VARCHAR(50) ,
    mail VARCHAR(100) ,
@@ -20,7 +20,7 @@ CREATE TABLE Rest_Reservation(
    PRIMARY KEY(id_resa)
 );
 
-CREATE TABLE Rest_Admin(
+CREATE TABLE rest_admin(
    id_Admin INT AUTO_INCREMENT,
    username VARCHAR(250) ,
    password VARCHAR(250) ,
@@ -28,7 +28,7 @@ CREATE TABLE Rest_Admin(
    PRIMARY KEY(id_Admin)
 );
 
-CREATE TABLE Rest_Customer_Review(
+CREATE TABLE rest_customer_review(
    id INT AUTO_INCREMENT,
    pictureUrl VARCHAR(250) ,
    firstName VARCHAR(50) ,
@@ -38,13 +38,13 @@ CREATE TABLE Rest_Customer_Review(
    PRIMARY KEY(id)
 );
 
-CREATE TABLE typesOfDish(
+CREATE TABLE rest_typesOfDish(
    id_types INT AUTO_INCREMENT,
    name VARCHAR(100) ,
    PRIMARY KEY(id_types)
 );
 
-CREATE TABLE Rest_Dish(
+CREATE TABLE rest_dish(
    id_dish INT AUTO_INCREMENT,
    isRobot BOOLEAN,
    isAvailable BOOLEAN,
@@ -56,27 +56,28 @@ CREATE TABLE Rest_Dish(
    FOREIGN KEY(id_types) REFERENCES typesOfDish(id_types)
 );
 
-CREATE TABLE define(
+CREATE TABLE rest_dish_logs (
+   log_id INT AUTO_INCREMENT PRIMARY KEY,
    id_dish INT,
    id_Admin INT,
    modifDate DATETIME,
-   PRIMARY KEY(id_dish, id_Admin),
-   FOREIGN KEY(id_dish) REFERENCES Rest_Dish(id_dish),
-   FOREIGN KEY(id_Admin) REFERENCES Rest_Admin(id_Admin)
+   FOREIGN KEY (id_dish) REFERENCES Rest_Dish(id_dish),
+   FOREIGN KEY (id_Admin) REFERENCES Rest_Admin(id_Admin)
 );
 
-CREATE TABLE manage(
+CREATE TABLE rest_reservation_logs (
+   log_id INT AUTO_INCREMENT PRIMARY KEY,
    id_resa INT,
    id_Admin INT,
    modifDate DATETIME NOT NULL,
-   PRIMARY KEY(id_resa, id_Admin),
-   FOREIGN KEY(id_resa) REFERENCES Rest_Reservation(id_resa),
-   FOREIGN KEY(id_Admin) REFERENCES Rest_Admin(id_Admin)
+   FOREIGN KEY (id_resa) REFERENCES Rest_Reservation(id_resa),
+   FOREIGN KEY (id_Admin) REFERENCES Rest_Admin(id_Admin)
 );
 
-INSERT INTO TypesOfDish (name) VALUES ('ENTREE');
-INSERT INTO TypesOfDish (name) VALUES ('PLAT');
-INSERT INTO TypesOfDish (name) VALUES ('DESSERT');
+
+INSERT INTO rest_typesOfDish (name) VALUES ('ENTREE');
+INSERT INTO rest_typesOfDish (name) VALUES ('PLAT');
+INSERT INTO rest_typesOfDish (name) VALUES ('DESSERT');
 
 INSERT INTO rest_admin (username, password, role) VALUES ('admin', '$2y$10$tfBK4jlXBc.HDoBW3cWK2eoH76SJu.rUlTJQa0/JzIaAeE/yfNmLW', 'admin');
 INSERT INTO rest_admin (username, password, role) VALUES ('chef', '$2y$10$lTtjAdeOgjv6ei3OsKH2q.vwwVfSaXj/bL5DzpL6q0LnhQV6COfj6', 'chef');

@@ -8,11 +8,18 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galactic Restaurant</title>
+    <title>L'Étoile Dorée</title>
     <link rel="stylesheet" href="assets/css/global.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script type="module" defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="assets/js/script.js"></script>
+    <?php
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
+    { ?>
+        <link rel="stylesheet" href="assets/css/admin.css">
+        <?php }
+        ?>
+
 </head>
 <script>
     const HOME_URL = "<?= HOME_URL ?>";
@@ -46,8 +53,7 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
             document.getElementById('deconnexion-btn').style.display = 'none';
 
             <?php if (isset($_SESSION['connecte']) && $_SESSION['connecte'] === true): ?>
-                document.getElementById('deconnexion-btn').style.display = 'inline-block';
-
+                document.getElementById('deconnexion-btn').style.display = 'inline-block'
             <?php endif; ?>
         });
 
