@@ -1,4 +1,4 @@
-const API_URL = "/";
+// import { HOME_URL } from "./config";
 
 document.addEventListener("DOMContentLoaded", () => {
   async function checkAvailability() {
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const date = new Date(datePicker.value);
       const dateString = date.toISOString().slice(0, 10);
 
-      const response = await fetch(API_URL + "getSeatsAvailability?date=" + dateString);
+      const response = await fetch(HOME_URL + "getSeatsAvailability?date=" + dateString);
       if (!response.ok) {
         throw new Error("Network response error.");
       }

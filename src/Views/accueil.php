@@ -27,7 +27,7 @@
     <section>
         <h2 id="reviews-title">Ce qu'en pensent nos clients</h2>
         <div class="carousel">
-            <script src="assets/js/carousel.js" type="module"></script>
+            <script src="./assets/js/carousel.js" type="module"></script>
             <div class="carousel-pictures"></div>
             <div class="carousel-review"></div>
             <div class="carousel-dots"></div>
