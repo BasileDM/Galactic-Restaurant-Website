@@ -18,10 +18,10 @@ class HomeController
 
     public function affichePage404()
     {
-      $this->render("404");
-      exit;
+        $this->render("404");
+        exit;
     }
-  
+
     public function affichePagePropos()
     {
         $cookRepo = new CookRepository;
@@ -43,7 +43,8 @@ class HomeController
         exit;
     }
 
-    public function displayReservationPage() {
+    public function displayReservationPage()
+    {
         $this->render("reservationForm");
         exit;
     }

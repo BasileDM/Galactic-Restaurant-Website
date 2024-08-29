@@ -23,28 +23,34 @@ class AdminController
         {
             $username = $_POST['username'];
             $mdp = $_POST['password'];
-    
+
             $adminRepository = new AdminRepository(); 
-    
-            // Verify the user with the correct logic inside the repository
+
             $admin = $adminRepository->verifyUser($username, $mdp);
     
-            if($admin) {
-                // session_start();
-    
+            if($admin) 
+            {
                 $_SESSION['connecte'] = true;
-                $_SESSION['utilisateur'] = $admin;
-                
-                
+                $_SESSION['role'] = $admin['role'];
+                $_SESSION['id'] = $admin['id_Admin'];
+
                 header('location:' . HOME_URL . 'admin');
                 die();
-            } else {
+            } 
+            else 
+            {
                 header('location:' . HOME_URL . 'login');
                 die();
             }
         }
+    } 
+
+    public function logout() {
+        session_destroy();
+        
+        header("Location: " . HOME_URL . "login");
+        exit();
     }
-    
 
     public function affichePageAdmin()
     {
@@ -58,11 +64,20 @@ class AdminController
         exit;
     }
 
-    public function affichePageCreationPlats()
+    public function affichePageCreationPlats($id=0)
     {
+        if($id !=0){
+            $dishRepo = new DishRepository;
+            $dish = $dishRepo->getDishById($id);
+            $this->render("formulaireCreationPlats", ['dish' => $dish]);
+            exit;
+        }
         $this->render("formulaireCreationPlats");
         exit;
     }
 
-
+    public function dropTables() {
+        $adminRepository = new AdminRepository();
+        $adminRepository->dropTables();
+    }
 }

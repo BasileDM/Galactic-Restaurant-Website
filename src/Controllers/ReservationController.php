@@ -3,6 +3,7 @@
 namespace src\controllers;
 
 use src\Models\Reservation;
+use src\Repositories\LogRepository;
 use src\Repositories\ReservationRepository;
 use src\Services\HelperService;
 use src\Services\Reponse;
@@ -10,6 +11,12 @@ use src\Services\Reponse;
 class ReservationController
 {
   use Reponse;
+
+  public function viewRGPD()
+  {
+    $this->render('RGPD');
+  }
+
   public function processReservation()
   {
     $name = htmlspecialchars(trim($_POST['nom']));
@@ -17,6 +24,7 @@ class ReservationController
     $date = htmlspecialchars(trim($_POST['date']));
     $time = htmlspecialchars(trim($_POST['time']));
     $number = filter_var(trim($_POST['number']), FILTER_SANITIZE_NUMBER_INT);
+    $terms = (isset($_POST['terms-conds']));
 
     if (empty($name) || strlen($name) > 50)
     {
@@ -44,13 +52,13 @@ class ReservationController
 
     if ($number <= 0 || $number > 20 || !filter_var($number, FILTER_VALIDATE_INT))
     {
-      $this->render('reservationForm', ['error' => 'Number of guests must be between 1 and 20.']);
+      $this->render('reservationForm', ['error' => 'Le nombre de convives doit être compris entre 1 et 20.']);
       return;
     }
 
     if ($number % 2 != 0)
     {
-      $number += 1;
+      $newNumber = $number + 1;
     }
 
     if ($this->getAvailableSeats($date) < $number)
@@ -59,15 +67,20 @@ class ReservationController
       return;
     }
 
+    if (!$terms)
+    {
+      $this->render('reservationForm', ['error' => 'Accepter les termes et conditions avant de continuer']);
+    }
+
     else
     {
       $reservation = new Reservation(
         null,
-        $_POST['nom'],
-        $_POST['email'],
-        $_POST['date'],
-        $_POST['time'],
-        $_POST['number'],
+        $name,
+        $email,
+        $date,
+        $time,
+        isset($newNumber) ? $newNumber : $number,
         0
       );
 
@@ -85,7 +98,7 @@ class ReservationController
           $reservation->getMail(),
           $reservation->getDate(),
           $reservation->getTime(),
-          $reservation->getNumberOfGuests()
+          $number
         );
 
         if (!$sentMail)
@@ -126,6 +139,24 @@ class ReservationController
         $reservationRepository->delete($reservation['id_resa']);
         $this->render('reservationForm', ['success' => 'Votre réservation a bien été annulée !']);
       }
+    }
+  }
+
+  public function validateReservation($idResa, $mail, $time, $name)
+  {
+    $reservationRepository = new ReservationRepository();
+    $logRepository = new LogRepository();
+    $helperService = new HelperService();
+    $result = $reservationRepository->validateReservation($idResa);
+    if ($result === true)
+    {
+      $logRepository->addLog($_SESSION['id'], 'reservation', $idResa);
+      $helperService->sendConfirmationMail($mail, $time, $name);
+      return ['status' => 'success'];
+    }
+    else
+    {
+      return ['status' => 'error'];
     }
   }
 }

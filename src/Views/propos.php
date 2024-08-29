@@ -21,10 +21,8 @@ include_once __DIR__ . '/Includes/header.php';
             <img class="tailleImageCuistots" src="assets/imgs/Equipe/Cuistots.png" alt="photo de l'équipe">
         </div>
         <div class="divEvent">
-            <h3 class="titreEvent">Your Event, Our Passion</h3>
-            <p>Adipiscing nam neque hendrerit nec pellentesque diam a. Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volutpat pellentesque.
-                Potenti porta mauris nec vulputate. </p>
-            <img src="assets/imgs/signature.jpg" alt="signature patron">
+            <h3 class="titreEvent">Votre Aventure Culinaire, Notre Mission Stellaire</h3>
+            <p>Dans notre cuisine, nos chefs unissent leurs talents pour concocter des mets venus de toute la galaxie. Bob le Terrien est notre maître des épices terrestres, Emma la Terrienne prépare des desserts qui vous envoient sur orbite, et Alex l’Astronaute excelle dans les grillades terrestres. Ils sont rejoints par Zorg le Zylonnien, expert en sauces célestes, Lila de la Lune, virtuose des légumes lunaires, et Glorp de Mars, spécialiste des fruits de mer martiens. Ensemble, ils forment une équipe culinaire aussi vari </p>
         </div>
     </div>
     </div>

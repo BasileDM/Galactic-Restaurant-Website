@@ -1,9 +1,9 @@
 </body>
 <footer>
+  <div class="footer-logo-container">
+    <img src="./assets/imgs/Logo.png" alt="L'étoile dorée logo" class="footer-logo">
+  </div>
   <div class="footer-boxes-container">
-    <div class="footer-logo-container">
-      <img src="assets/imgs/logo.png" alt="L'étoile dorée logo" class="footer-logo">
-    </div>
     <div class="footer-box">
       <h3 class="footer-title"> Horaires d'ouverture </h3>
       <p> Lundi - Dimanche </p>
@@ -19,10 +19,11 @@
       <h3 class="footer-title">Nous trouver</h3>
       <p>8911 Tanglewood Ave.<br>Capitol Heights, <br>MD 20743</p>
     </div>
-    <div class="footer-copyright">
-      <p> L'étoile dorée </p>
-      <p> Copyright © 578024. Tous droits réservés. </p>
-    </div>
+  </div>
+  <div class="footer-copyright">
+    <p> L'étoile dorée </p>
+    <p> Copyright © 578024. Tous droits réservés. </p>
+    <a href=<?php echo HOME_URL . "RGPD"; ?> id="terms-footer">Terms and conditions</a>
   </div>
 </footer>
 
