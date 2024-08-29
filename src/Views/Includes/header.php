@@ -38,12 +38,12 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
                     <a class="navLink <?php echo $current_page == '' ? 'active' : ''; ?>" href=<?php echo HOME_URL; ?>>Accueil</a>
                     <a class="navLink <?php echo $current_page == 'menu' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'menu'; ?>> Menu</a>
                     <a class="navLink <?php echo $current_page == 'reservation' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'reservation'; ?>> Réserver</a>
-                    <a class="navLink <?php echo $current_page == 'aPropos' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'aPropos'; ?>> A propos</a>
+                    <a class="navLink <?php echo $current_page == 'aPropos' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'aPropos'; ?>>À propos</a>
                     <?php if (isset($_SESSION['connecte']) && $_SESSION['connecte'])
                     {
 
                     ?>
-                        <a class="navLink <?php echo $current_page == 'admin' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'admin'; ?>> Page admin</a>
+                        <a class="navLink <?php echo $current_page == 'admin' ? 'active' : ''; ?>" href=<?php echo HOME_URL . 'admin'; ?>>Admin</a>
                     <?php }
                     else
                     { ?> <a id="contact" class="navLink <?php echo $current_page == 'contact' ? 'active' : ''; ?>"> Contact</a><?php } ?>
