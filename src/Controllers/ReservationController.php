@@ -58,7 +58,7 @@ class ReservationController
 
     if ($number % 2 != 0)
     {
-      $number += 1;
+      $newNumber = $number + 1;
     }
 
     if ($this->getAvailableSeats($date) < $number)
@@ -76,11 +76,11 @@ class ReservationController
     {
       $reservation = new Reservation(
         null,
-        $_POST['nom'],
-        $_POST['email'],
-        $_POST['date'],
-        $_POST['time'],
-        $_POST['number'],
+        $name,
+        $email,
+        $date,
+        $time,
+        isset($newNumber) ? $newNumber : $number,
         0
       );
 
@@ -98,7 +98,7 @@ class ReservationController
           $reservation->getMail(),
           $reservation->getDate(),
           $reservation->getTime(),
-          $reservation->getNumberOfGuests()
+          $number
         );
 
         if (!$sentMail)

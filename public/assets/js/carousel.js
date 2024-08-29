@@ -1,8 +1,7 @@
 import Review from "./Classes/Review.js";
-// import { HOME_URL } from "./config.js";
 
 const fetchReviews = async () => {
-  const response = await fetch(HOME_URL + "api/GetReviews");
+  const response = await fetch("api/GetReviews");
   const data = await response.json();
   const reviews = data.map((reviewData) => new Review(reviewData));
   return reviews;
