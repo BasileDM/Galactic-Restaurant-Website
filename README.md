@@ -1,8 +1,6 @@
-# Galactic Restaurant Website
+# 🍽 The Galactic Restaurant Website
 
 ## Le projet
-
-🍽 The Galactic Restaurant website.
 
 Le site est une page d'un restaurant galactique fictif servant des plats du futur.
 
